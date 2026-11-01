@@ -1,7 +1,7 @@
 # OpenSim MCP for Windows 11
 
 Windows 11 x64 上供 Codex 使用的独立 OpenSim MCP，注册名 **opensim_mcp**。
-当前版本 **v1.3.0**，**92 个工具**。这是独立项目，不是 OpenSim/MathWorks/OpenAI 官方产品。
+当前版本 **v1.4.0**，**93 个工具**。这是独立项目，不是 OpenSim/MathWorks/OpenAI 官方产品。
 
 支持模型检查和编辑、IK/ID/肌肉分析、缩放、关节反力、RRA/Moco、异步任务与保存点、
 GUI 自动桥接、离线三维动画，以及通用 MATLAB/CAD 数据交换。上肢与下肢共用接口。
@@ -10,7 +10,7 @@ GUI 自动桥接、离线三维动画，以及通用 MATLAB/CAD 数据交换。�
 ## 安装
 
 1. 从 [Releases](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) 下载
-   `opensim-mcp-v1.3.0-win11-installer.zip` 和对应 `.sha256`。
+   `opensim-mcp-v1.4.0-win11-installer.zip` 和对应 `.sha256`。
 2. 用 PowerShell 的 `Get-FileHash <ZIP路径> -Algorithm SHA256` 对照校验和。
 3. 解压到最终目录，例如 `E:\opensim-mcp`，双击 **install.cmd**。
 4. 等待安装、自检和 Codex 配置完成，然后重启 Codex。
@@ -38,6 +38,12 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 `
 .\.venv\Scripts\python.exe -B -m opensim_mcp.server
 ```
 
+## v1.4 通用可视化工作台
+
+新增单/双场景工作台：同步时间轴与视角、点击组件联动高亮、距离/三点夹角、
+坐标/外部信号/肌肉力与激活曲线对比，以及查看状态保存/恢复。
+常用操作保持简洁，测量与显示设置按需展开。详见 [工作台说明](docs/WORKBENCH.zh-CN.md)。
+
 ## v1.3 通用可视化
 
 三维姿态和外部曲线共用时间轴，点击曲线定位姿态，支持组件绑定、原始采样 CSV 和选择
@@ -57,7 +63,7 @@ OpenSim 4.6 API；不支持替换为 Python 3.8 的旧 API。GUI 使用独立 Jy
 依赖版本见随包 lock 文件。包内不含用户模型、账号配置、参与者数据、MATLAB/SolidWorks
 软件或 OpenSim GUI。第三方组件独立安装，遵循各自许可；见 THIRD_PARTY_NOTICES.md。
 
-源代码版本 v1.3 曾通过 215 项本地测试。发行包另行验证真实 MCP/IK、原生 Moco 自检、
+源码与发行包的执行验证数量见随 Release 提供的验证记录。发行包另行验证真实 MCP/IK、原生 Moco 自检、
 可视化接口和文件完整性；具体执行记录随 Release 提供。干净 Windows 虚拟机与 GUI
 生命周期测试不等同于本机安装验证。
 
