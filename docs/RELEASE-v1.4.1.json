@@ -1,0 +1,38 @@
+{
+  "version": "1.4.1",
+  "executed_on": "2026-11-13",
+  "platform": "Windows 11 x64",
+  "archive": "opensim-mcp-v1.4.1-win11-installer.zip",
+  "sha256": "fa1058930e00b6e0ca6a5632bd5fddfeb39a9955a9ca0fd7c1cc1e8ab7da4657",
+  "source_tests": {
+    "passed": 262,
+    "failures": 0,
+    "errors": 0
+  },
+  "compiled_modules": 72,
+  "tool_count": 94,
+  "package_manifest_files_verified": 131,
+  "tested_executable_payload_unchanged_after_documentation_refresh": true,
+  "compiled_mcp_handshake": true,
+  "compiled_native_ik_max_error_m": 1.3877787807814457e-17,
+  "compiled_mass_properties": {
+    "native_save_reopen_verified": true,
+    "id_added_force_N": 2.0,
+    "expected_added_force_N": 2.0,
+    "invalid_inertia_rejected": true,
+    "native_energy": {
+      "native_kinetic_energy_J": 0.02731065779119444,
+      "analytic_kinetic_energy_J": 0.027310657791194442,
+      "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026"
+    }
+  },
+  "scope": "Source regressions and extracted compiled-package execution with existing CPython 3.12 and OpenSim 4.6 API dependencies on this Windows 11 PC.",
+  "not_executed_this_release": [
+    "Fresh OpenSim installer dependency download",
+    "Clean Windows 11 VM",
+    "GUI lifecycle",
+    "Hardware",
+    "Human experimental validation"
+  ],
+  "full_source_in_public_archive": false
+}

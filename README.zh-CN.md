@@ -1,7 +1,7 @@
 # OpenSim MCP for Windows 11
 
 Windows 11 x64 上供 Codex 使用的独立 OpenSim MCP，注册名 **opensim_mcp**。
-当前版本 **v1.4.0**，**93 个工具**。这是独立项目，不是 OpenSim/MathWorks/OpenAI 官方产品。
+当前版本 **v1.4.1**，**94 个工具**。这是独立项目，不是 OpenSim/MathWorks/OpenAI 官方产品。
 
 支持模型检查和编辑、IK/ID/肌肉分析、缩放、关节反力、RRA/Moco、异步任务与保存点、
 GUI 自动桥接、离线三维动画，以及通用 MATLAB/CAD 数据交换。上肢与下肢共用接口。
@@ -10,7 +10,7 @@ GUI 自动桥接、离线三维动画，以及通用 MATLAB/CAD 数据交换。�
 ## 安装
 
 1. 从 [Releases](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) 下载
-   `opensim-mcp-v1.4.0-win11-installer.zip` 和对应 `.sha256`。
+   `opensim-mcp-v1.4.1-win11-installer.zip` 和对应 `.sha256`。
 2. 用 PowerShell 的 `Get-FileHash <ZIP路径> -Algorithm SHA256` 对照校验和。
 3. 解压到最终目录，例如 `E:\opensim-mcp`，双击 **install.cmd**。
 4. 等待安装、自检和 Codex 配置完成，然后重启 Codex。
@@ -37,6 +37,12 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 `
 . .\scripts\env.ps1 -TempRoot 'E:\simulink\_codex_tmp\opensim-mcp-runtime'
 .\.venv\Scripts\python.exe -B -m opensim_mcp.server
 ```
+
+## v1.4.1 质量参数换算
+
+新增质量、质心和惯量的单位、参考点及坐标架换算，供 CAD 装置刚体参数导入。
+支持平行轴变换、惯性积符号约定、旋转矩阵与惯量物理约束检查。
+用法见 [质量参数说明](docs/MASS_PROPERTIES.zh-CN.md)。
 
 ## v1.4 通用可视化工作台
 
