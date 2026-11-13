@@ -1,0 +1,51 @@
+{
+  "version": "1.4.0",
+  "executed_on": "2026-11-01",
+  "platform": "Windows 11 x64",
+  "tool_count": 93,
+  "adapter_tests": 242,
+  "browser": {
+    "passed": true,
+    "twoNativeScenes": true,
+    "exactNativeDifference_rad": 0.05,
+    "synchronizedFrame": 20,
+    "sharedCamera": true,
+    "linkedSelectionAndHide": true,
+    "distance_mm": 580.9449930138803,
+    "threePointAngle_deg": 159.07436803693966,
+    "saveAndReopenRestore": true,
+    "staleStateRejected": true,
+    "downloads": [
+      "opensim-view.json",
+      "comparison.csv",
+      "measurement.csv"
+    ],
+    "playback": true,
+    "mobileNoOverflow": true,
+    "singleUpperMuscles": true,
+    "javascriptExceptions": 0,
+    "direct_mesh_picking": true,
+    "force_curves": true,
+    "missing_pose_blanked": true,
+    "measurements_checked_against_native_transforms": true
+  },
+  "mcp": {
+    "passed": true,
+    "version": "1.4.0",
+    "tool_count": 93,
+    "native_frames": 31,
+    "two_scene_exact_time_matching": true,
+    "saved_state_accepted": true,
+    "stale_state_rejected": true,
+    "tamper_rejected": true,
+    "scripting_enabled": false
+  },
+  "runtime_pins_changed": false,
+  "limits": [
+    "Offline nearest-native-sample matching only, no live synchronization",
+    "No automatic model registration; view normalized to each scene bounds",
+    "Measurement is marker/frame-origin distance or three-point angle, not anatomical joint angle or mesh clearance",
+    "Existing Windows 11 host; no new clean-OS VM or GUI lifecycle run",
+    "Official Arm26 scene remains local-only; public example is original synthetic lower-limb fixture"
+  ]
+}

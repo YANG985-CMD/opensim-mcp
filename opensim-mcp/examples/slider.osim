@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSimDocument Version="40000">
+  <Model name="mcp_slider">
+    <credits>Original analytic test fixture created for OpenSim MCP. Synthetic, not a human model.</credits>
+    <length_units>meters</length_units>
+    <force_units>N</force_units>
+    <gravity>0 -9.80665 0</gravity>
+    <Ground name="ground"/>
+    <BodySet name="bodyset">
+      <objects>
+        <Body name="block">
+          <mass>1</mass><mass_center>0 0 0</mass_center><inertia>1 1 1 0 0 0</inertia>
+        </Body>
+      </objects><groups/>
+    </BodySet>
+    <JointSet name="jointset">
+      <objects>
+        <SliderJoint name="slider">
+          <socket_parent_frame>/ground</socket_parent_frame>
+          <socket_child_frame>/bodyset/block</socket_child_frame>
+          <coordinates>
+            <Coordinate name="slider_tx">
+              <default_value>0</default_value><range>-1 1</range>
+              <clamped>false</clamped><locked>false</locked>
+            </Coordinate>
+          </coordinates>
+        </SliderJoint>
+      </objects><groups/>
+    </JointSet>
+    <MarkerSet name="markerset">
+      <objects>
+        <Marker name="M1"><socket_parent_frame>/bodyset/block</socket_parent_frame><location>0 0 0</location></Marker>
+        <Marker name="M2"><socket_parent_frame>/bodyset/block</socket_parent_frame><location>0 0.1 0</location></Marker>
+        <Marker name="M3"><socket_parent_frame>/bodyset/block</socket_parent_frame><location>0 0 0.1</location></Marker>
+      </objects><groups/>
+    </MarkerSet>
+  </Model>
+</OpenSimDocument>

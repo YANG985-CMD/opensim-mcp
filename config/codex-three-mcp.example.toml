@@ -1,0 +1,33 @@
+# Example for installed release packages. Replace paths with your real installation.
+# Merge these sections into the existing Codex config. Do not duplicate server keys.
+[mcp_servers.opensim_mcp]
+command = 'E:/MCP/opensim-mcp/.venv/Scripts/python.exe'
+args = ['-B', '-m', 'opensim_mcp.server']
+startup_timeout_sec = 120
+tool_timeout_sec = 180
+
+[mcp_servers.opensim_mcp.env]
+OPENSIM_MCP_ALLOWED_ROOTS = '["E:/MCP/opensim-mcp/examples","E:/MCP/projects"]'
+OPENSIM_MCP_RESULTS_ROOT = 'E:/MCP/projects/results'
+OPENSIM_MCP_TEMP_ROOT = 'E:/MCP/runtime/opensim'
+OPENSIM_MCP_API_PYTHON = 'E:/MCP/opensim-mcp/.api46-venv/Scripts/python.exe'
+OPENSIM_MCP_TOOL_BACKEND = 'api'
+OPENSIM_MCP_ENABLE_SCRIPTS = '0'
+PYTHONDONTWRITEBYTECODE = '1'
+TEMP = 'E:/MCP/runtime/opensim'
+TMP = 'E:/MCP/runtime/opensim'
+
+[mcp_servers.solidworks-mcp]
+command = 'E:/MCP/solidworks-mcp/.venv/Scripts/python.exe'
+args = ['-B', '-u', 'E:/MCP/solidworks-mcp/launch.py']
+cwd = 'E:/MCP/solidworks-mcp'
+enabled = true
+startup_timeout_sec = 120
+tool_timeout_sec = 150
+
+[mcp_servers.matlab]
+command = 'E:/MCP/matlab/matlab-mcp-server-windows-x64.exe'
+args = ['--matlab-session-mode=auto', '--log-folder=E:/MCP/runtime/matlab']
+env_vars = ['WINDIR']
+startup_timeout_sec = 120
+tool_timeout_sec = 180

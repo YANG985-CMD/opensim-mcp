@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling==1.27.0", "editables==0.5"]
+build-backend = "hatchling.build"
+
+[project]
+name = "opensim-mcp"
+version = "1.4.1"
+description = "Windows 11 OpenSim MCP with generic 3D visualization, explicit MATLAB/CAD exchange, biomechanics and GUI coordination"
+readme = "README.md"
+license = "MIT"
+keywords = ["opensim", "mcp", "biomechanics", "inverse-kinematics", "windows"]
+classifiers = ["Operating System :: Microsoft :: Windows", "Programming Language :: Python :: 3.12"]
+requires-python = ">=3.12,<3.13"
+dependencies = ["mcp==1.29.1", "defusedxml==0.7.1", "matplotlib==3.11.2", "pydantic==2.14.1", "ezc3d==1.7.2", "vtk==9.7.1"]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+opensim-mcp = "opensim_mcp.server:main"
+opensim-mcp-check = "opensim_mcp.check:main"
+opensim-mcp-doctor = "opensim_mcp.doctor:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opensim_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -p no:cacheprovider"
+

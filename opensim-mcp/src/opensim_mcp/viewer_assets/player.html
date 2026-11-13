@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'nonce-__NONCE__'; style-src 'unsafe-inline'; img-src data:">
+<title>OpenSim 运动与受力查看</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef3f7;color:#172f43;font:15px system-ui,sans-serif}header{padding:20px 28px;background:white;border-bottom:1px solid #d5e0e8}h1{margin:0;font-size:24px}header p{margin:7px 0 0;color:#526b80}main{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:18px;max-width:1600px;margin:auto;padding:20px}.stage,.panel{background:white;border:1px solid #d5e0e8;border-radius:12px;overflow:hidden}.stage{min-width:0;align-self:start}#scene{width:100%;height:590px;display:block;touch-action:none;background:#f5f8fb}.bar{padding:15px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-top:1px solid #d5e0e8}button,select{font:inherit;color:inherit;background:#f2f6fa;border:1px solid #bdccd9;border-radius:7px;padding:8px 12px;cursor:pointer}button.primary,.tabs button.active{background:#166b91;color:white;border-color:#166b91}select{max-width:100%}#timeline{flex:1;min-width:150px;accent-color:#166b91}#time{font-variant-numeric:tabular-nums;min-width:80px}.panel{padding:18px}h2{font-size:17px;margin:15px 0 12px}.option{display:block;margin:12px 0}.muted{font-size:13px;line-height:1.6;color:#597286}.legend{height:9px;background:linear-gradient(90deg,#2576ad,#6cbb99,#e9c05f,#d44736);border-radius:8px;margin:12px 0 4px}#plot,#muscle-plot{width:100%;height:210px;display:block}.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.fact{padding:10px;background:#f1f5f8;border-radius:7px;font-size:12px}.fact b{display:block;font-size:20px;overflow-wrap:anywhere}.notes{font-size:13px;line-height:1.6;color:#675323}#warning{padding-top:12px}#failure{display:none;padding:20px;color:#a52c25}footer{padding:0 24px 22px;color:#597286;font-size:13px}.tabs{display:flex;gap:7px;margin:14px 0}.tabs button{flex:1;padding:8px 4px}.tab-panel[hidden]{display:none}.quality{padding:11px;background:#fff4dc;color:#71531d;border-radius:8px;font-size:13px;line-height:1.6}.quality.pass{background:#e6f4ec;color:#286242}.quality summary{cursor:pointer;font-weight:600}.curve-legend{display:flex;gap:12px;font-size:12px;line-height:1.5}.curve-legend span:first-child{color:#176e96}.curve-legend span:last-child{color:#b06b1b}#external-source{font-size:14px;overflow-wrap:anywhere}.quality.info{background:#e8f2fa;color:#235a79}#muscle-volume-source{overflow-wrap:anywhere}@media(max-width:900px){main{grid-template-columns:1fr}#scene{height:480px}.panel{max-width:none}}
+</style>
+<header><h1 id="title">OpenSim 运动查看</h1><p>拖动旋转，滚轮缩放；点击肌肉路径可查看数值与曲线。</p></header>
+<main><section class="stage"><div id="failure"></div><canvas id="scene" aria-label="三维模型、肌肉与运动"></canvas>
+<div class="bar"><button class="primary" id="play">播放</button><input id="timeline" type="range" min="0" max="1" value="0" step="1" aria-label="运动帧"><span id="time">0.000 s</span><select id="speed" aria-label="播放速度"><option value=".25">0.25 倍</option><option value=".5">0.5 倍</option><option value="1" selected>1 倍</option><option value="2">2 倍</option></select><button id="reset">重置视角</button></div></section>
+<aside class="panel">
+<details class="quality" id="quality-box"><summary id="quality-summary">未提供肌肉受力结果</summary><div id="quality-details"></div></details>
+<nav class="tabs" aria-label="查看面板"><button id="tab-muscle">肌肉受力</button><button id="tab-display">显示设置</button><button id="tab-coordinate">关节曲线</button><button id="tab-signals">外部数据</button></nav>
+<section id="panel-muscle" class="tab-panel">
+<label class="option">选择肌肉 <select id="selected-muscle" aria-label="选择肌肉"></select></label>
+<label class="option">着色依据 <select id="muscle-color" aria-label="肌肉着色"><option value="plain">统一红色</option><option value="force">肌肉力 N</option><option value="activation">激活程度 0–1</option></select></label>
+<div class="legend"></div><div class="muted" id="muscle-color-legend"></div>
+<div class="facts"><div class="fact"><b id="muscle-force">—</b>当前肌肉力 N</div><div class="fact"><b id="muscle-activation">—</b>当前激活程度</div><div class="fact"><b id="muscle-comparison">—</b>对照肌肉力 N</div><div class="fact"><b id="muscle-volume">—</b><span id="muscle-volume-label">肌肉体积 cm³</span></div></div>
+<div class="muted" id="muscle-volume-source"></div><h2>肌肉力随时间变化</h2><div class="curve-legend"><span id="primary-force-label">当前模型</span><span id="comparison-force-label">对照模型</span></div><canvas id="muscle-plot" aria-label="肌肉受力随时间变化"></canvas><button id="download-muscle">导出当前肌肉曲线 CSV</button><p class="muted" id="muscle-result-note"></p>
+</section>
+<section id="panel-signals" class="tab-panel" hidden>
+<h2>跨软件时序数据</h2><label class="option">选择信号 <select id="external-signal" aria-label="外部信号"></select></label>
+<div class="facts"><div class="fact"><b id="external-value">—</b><span id="external-unit">当前值</span></div><div class="fact"><b id="external-source">—</b>数据来源</div></div>
+<p id="external-component" class="muted"></p><canvas id="external-plot" aria-label="外部信号与三维姿态同步曲线"></canvas>
+<p class="muted" id="external-alignment"></p><button id="download-signal">导出信号 CSV</button> <button id="download-context">导出选择上下文</button>
+<p class="muted">点击曲线定位三维姿态。选择上下文包含组件和时刻，可交给 MATLAB 或 CAD MCP 继续处理。</p>
+</section>
+<section id="panel-display" class="tab-panel" hidden>
+<h2>显示内容</h2><label class="option"><input type="checkbox" id="muscles" checked> 肌肉路径（<span id="muscle-count">0</span>）</label><label class="option">肌肉粗细 <input id="muscle-width" type="range" min="0.5" max="2" value="1" step="0.1" aria-label="肌肉显示粗细"></label><p class="muted">管状粗细是显示示意，不代表真实解剖体积。</p><label class="option"><input type="checkbox" id="surfaces" checked> 模型表面</label><label class="option"><input type="checkbox" id="skeleton"> 身体框架</label><label class="option"><input type="checkbox" id="markers"> 模型标记</label><label class="option"><input type="checkbox" id="compare" checked> 对比运动（橙色）</label><label class="option"><input type="checkbox" id="errors"> 按标记差异着色</label><div class="legend"></div><div class="muted" id="error-label"></div><div class="facts"><div class="fact"><b id="frame-count">0</b>显示帧</div><div class="fact"><b id="mesh-count">0</b>表面几何</div></div><div class="notes" id="warning"></div>
+</section>
+<section id="panel-coordinate" class="tab-panel" hidden><h2>坐标曲线</h2><select id="coordinate" aria-label="曲线坐标"></select><canvas id="plot" aria-label="坐标随时间变化曲线"></canvas><div class="muted" id="sample-note"></div></section>
+</aside></main>
+<footer>肌肉力和激活属于模型估计。数值检查不等于生理验证。体积保留测量或参数估算来源；无数据时显示“—”。</footer>
+<script nonce="__NONCE__">const DATA=__DATA__;
+__SCRIPT__
+</script></html>

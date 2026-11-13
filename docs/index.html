@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Windows 11 上配置 OpenSim、SolidWorks 和 MathWorks 官方 MATLAB MCP，连接 CAD、人体分析与数据处理。">
+  <title>OpenSim · SolidWorks · MATLAB MCP 协作</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">OpenSim + SolidWorks MCP</a>
+    <nav aria-label="主导航">
+      <a href="#install">安装</a><a href="#configure">配置</a><a href="#workflow">联动</a>
+      <a href="https://github.com/YANG985-CMD/opensim-mcp">GitHub ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">WINDOWS 11 · 开源源码 · 官方 MATLAB 入口</p>
+      <h1>从机械设计，<br>走到人体运动与结果分析。</h1>
+      <p class="lead">SolidWorks 设计装置，OpenSim 分析人体，MATLAB 处理数据。<br class="desktop">在同一个 AI 客户端中连接三个 MCP，让每一步的结果接得上。</p>
+      <div class="actions"><a class="button primary" href="#install">开始配置三个 MCP</a><a class="button" href="https://github.com/YANG985-CMD/opensim-mcp">查看完整源码 ↗</a></div>
+      <div class="roles" aria-label="三个软件的分工">
+        <div><span class="role-number">01</span><strong>SolidWorks</strong><span>结构、装配与 CAD 参数</span></div>
+        <div><span class="role-number">02</span><strong>OpenSim</strong><span>人体运动、肌肉与关节载荷</span></div>
+        <div><span class="role-number">03</span><strong>MATLAB / Simulink</strong><span>数据复核、曲线与控制仿真</span></div>
+      </div>
+    </section>
+
+    <section id="install" class="section">
+      <div class="section-heading"><p class="eyebrow">安装与准备</p><h2>先把三个服务装好。</h2><p>两个本项目安装包在同一个下载页。MATLAB 从 MathWorks 官方入口获取。</p></div>
+      <div class="install-grid">
+        <article class="install-card">
+          <div class="card-top"><span class="tag">本项目 · MIT 开源</span><span class="version">v0.5.3</span></div>
+          <h3>SolidWorks MCP</h3><p>建模、改尺寸、装配配合、干涉和间隙检查、质量参数与模型导出。</p>
+          <p class="requirement">准备 SOLIDWORKS 2025 与 64 位 Python 3.12。</p>
+          <a class="button full" href="https://github.com/YANG985-CMD/opensim-mcp/releases/download/suite-2026.11.13/solidworks-mcp-v0.5.3-win11-installer.zip">下载 Windows 安装包</a>
+          <details><summary>查看安装步骤</summary><ol><li>核对同一 Release 中的 SHA256。</li><li>解压到最终目录。</li><li>运行 <code>install.ps1</code>，等到 <code>MCP_READY</code>。</li><li>保留生成的设置文件，并连接已运行的软件。</li></ol></details>
+          <a class="text-link" href="https://github.com/YANG985-CMD/opensim-mcp/tree/main/solidworks-mcp">源码与说明 ↗</a>
+        </article>
+        <article class="install-card">
+          <div class="card-top"><span class="tag">本项目 · MIT 开源</span><span class="version">v1.4.1</span></div>
+          <h3>OpenSim MCP</h3><p>检查和编辑人体模型，计算运动与受力，导出带曲线的 HTML 三维结果。</p>
+          <p class="requirement">Windows 11 x64。安装器准备 Python 与 API，GUI 可选。</p>
+          <a class="button full" href="https://github.com/YANG985-CMD/opensim-mcp/releases/download/suite-2026.11.13/opensim-mcp-v1.4.1-win11-installer.zip">下载 Windows 安装包</a>
+          <details><summary>查看安装步骤</summary><ol><li>核对同一 Release 中的 SHA256。</li><li>解压后进入内层 <code>opensim-mcp</code>。</li><li>运行 <code>install.cmd</code>，完成联网安装与自检。</li><li>配置需要访问的项目输入和结果目录。</li></ol></details>
+          <a class="text-link" href="https://github.com/YANG985-CMD/opensim-mcp/tree/main/opensim-mcp">源码与说明 ↗</a>
+        </article>
+        <article class="install-card official">
+          <div class="card-top"><span class="tag">MathWorks 官方</span><span class="version">官方最新版本</span></div>
+          <h3>MATLAB MCP</h3><p>运行 MATLAB、检查代码和分析数据。可通过官方工具包接入 Simulink 和 Skills。</p>
+          <p class="requirement">准备有许可的 MATLAB，依官方文档选择工具包。</p>
+          <a class="button full" href="https://github.com/matlab/agentic-toolkit-installer">打开官方安装入口 ↗</a>
+          <details><summary>查看官方配置方式</summary><p>安装官方 <code>agenticToolkitInstaller.mltbx</code> 后，在 MATLAB 运行 <code>setupAgenticToolkit("install")</code>，选择 Codex。</p><p>也可从官方 MCP 发布页下载 Windows x64 可执行程序后手动配置。</p></details>
+          <div class="official-links"><a href="https://github.com/matlab/matlab-mcp-server">官方 MCP ↗</a><a href="https://github.com/matlab/simulink-agentic-toolkit">Simulink 工具包 ↗</a></div>
+        </article>
+      </div>
+      <p class="section-note"><a href="https://github.com/YANG985-CMD/opensim-mcp/releases/latest">全部安装包、校验和与验证记录 ↗</a><span> · </span><a href="https://github.com/YANG985-CMD/opensim-mcp/blob/main/docs/SETUP_WINDOWS11.zh-CN.md">逐步安装指南 ↗</a></p>
+    </section>
+
+    <section id="configure" class="section configure-section">
+      <div class="section-heading"><p class="eyebrow">配置助手</p><h2>填入本机路径，生成 Codex 配置。</h2><p>先完成安装，再核对下方示例路径。配置在浏览器本地生成，下载后合并到已有的 <code>config.toml</code>。</p></div>
+      <div class="config-layout">
+        <form id="config-form">
+          <label for="opensim-path">OpenSim MCP 安装目录</label><input id="opensim-path" name="opensim" required value="E:/MCP/opensim-mcp" spellcheck="false"><small>该目录中应有 <code>.venv</code> 和 <code>.api46-venv</code>。</small>
+          <label for="solidworks-path">SolidWorks MCP 安装目录</label><input id="solidworks-path" name="solidworks" required value="E:/MCP/solidworks-mcp" spellcheck="false"><small>该目录中应有 <code>launch.py</code> 和安装生成的设置文件。</small>
+          <label for="matlab-path">MATLAB MCP 可执行文件</label><input id="matlab-path" name="matlab" required value="E:/MCP/matlab/matlab-mcp-server-windows-x64.exe" spellcheck="false"><small>官方安装器用户请填它实际生成的服务路径。</small>
+          <label for="project-path">共用项目目录</label><input id="project-path" name="project" required value="E:/MCP/projects" spellcheck="false">
+          <label for="runtime-path">临时运行目录</label><input id="runtime-path" name="runtime" required value="E:/MCP/runtime" spellcheck="false">
+          <button type="submit" class="button primary full">生成三个服务的配置</button>
+          <p class="helper">使用安装器已生成的 MATLAB 扩展参数时，将其保留在 <code>matlab</code> 条目中。完整指南解释了两种配置方式。</p>
+        </form>
+        <div class="config-result">
+          <div class="result-toolbar"><span>Codex · TOML</span><div><button id="copy-config" disabled>复制</button><button id="download-config" disabled>下载配置片段</button></div></div>
+          <label class="sr-only" for="config-output">生成的 Codex 配置</label><textarea id="config-output" readonly spellcheck="false" placeholder="点击左侧按钮生成配置。先检查输入路径是否与本机安装一致。"></textarea>
+          <p id="config-status" role="status" aria-live="polite">生成后，将对应的三个服务块合并到 Codex 配置。每个注册名保留一份。</p>
+        </div>
+      </div>
+      <div class="checklist"><strong>重新连接后的三项自检</strong><span>OpenSim <code>get_environment</code></span><span>SolidWorks <code>sw_health</code></span><span>MATLAB <code>detect_matlab_toolboxes</code></span></div>
+    </section>
+
+    <section id="workflow" class="section">
+      <div class="section-heading"><p class="eyebrow">联动功能</p><h2>每个软件完成自己擅长的一步。</h2><p>同一个 AI 客户端调用三个 MCP，沿统一的项目文件和时间轴交接结果。当前采用离线文件交换。</p></div>
+      <div class="flow" aria-label="CAD 到人体分析再到结果复核">
+        <article><span>01 · 机械结构</span><h3>SolidWorks</h3><p>导出分件几何、质量、质心与惯量。</p></article><span class="arrow" aria-hidden="true">→</span>
+        <article><span>02 · 人体分析</span><h3>OpenSim</h3><p>明确坐标与关节，计算运动和受力。</p></article><span class="arrow" aria-hidden="true">→</span>
+        <article><span>03 · 数据复核</span><h3>MATLAB</h3><p>比较方案、计算指标，交付带单位曲线。</p></article>
+      </div>
+      <div class="use-cases"><article><h3>把装置穿到人体模型上</h3><p>统一单位与坐标后挂载 CAD 装置。上肢和下肢共用通用接口。</p></article><article><h3>比较两版结构的影响</h3><p>在同一人体、动作和外载荷下，比较质量变化带来的力矩与机械功。</p></article><article><h3>让曲线与三维姿态关联</h3><p>HTML 共用时间轴，点击曲线回看对应动作与所选组件。</p></article></div>
+      <aside class="evidence"><strong>已跑通的基础算例</strong><p>21.6 g 的 CAD 样件，在 1 m/s² 加速度下，OpenSim 计算受力增量 0.0216 N，MATLAB 回算机械功 0.0108 J。该解析滑块算例核验数据交接与数值计算。</p><a href="https://github.com/YANG985-CMD/opensim-mcp/blob/main/docs/INTEROP.zh-CN.md">查看完整流程、输入约定与验证范围 ↗</a></aside>
+    </section>
+  </main>
+  <footer><div><strong>OpenSim + SolidWorks MCP</strong><p>项目源码按 MIT 发布。各软件本体与第三方组件遵循各自许可。</p></div><div><a href="https://github.com/YANG985-CMD/opensim-mcp">GitHub 源码</a><a href="https://github.com/YANG985-CMD/opensim-mcp/blob/main/LICENSE">许可</a><a href="https://github.com/matlab/matlab-mcp-server">MathWorks 官方 MCP</a></div></footer>
+  <script type="module" src="config.mjs"></script>
+</body>
+</html>

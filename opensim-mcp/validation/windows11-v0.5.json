@@ -1,0 +1,32 @@
+{
+  "version": "0.5.0",
+  "date": "2026-10-28",
+  "adapter_tests": {
+    "passed": 92,
+    "failed": 0
+  },
+  "tool_count": 52,
+  "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+  "native_project": {
+    "first_computed": 7,
+    "repeat_reused": 7,
+    "threshold_change_reused_all": true,
+    "failed_stage_resume": true,
+    "tampered_cache_recomputed": true,
+    "passed": true
+  },
+  "regression": {
+    "native_cancel_retains_only_complete_prefix_and_resumes": true,
+    "human": {
+      "marker_rms_m": 0.02199652277590968,
+      "residual_rms_N": 52.93971814858892,
+      "residual_rms_fraction_BW": 0.07435742273636088,
+      "quality_status": "needs_review",
+      "input_files_redistributed": false
+    },
+    "passed": true
+  },
+  "prior_native_regression_passed": true,
+  "curve_visually_inspected": true,
+  "hosted_ci_executed": false
+}

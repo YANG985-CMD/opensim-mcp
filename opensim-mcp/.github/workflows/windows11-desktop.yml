@@ -1,0 +1,47 @@
+name: Optional Windows 11 desktop regression
+on:
+  workflow_dispatch:
+    inputs:
+      opensim_root:
+        description: Installed OpenSim GUI directory on your self-hosted Windows 11 machine
+        required: true
+        type: string
+      resources_root:
+        description: Already installed official GUI resources directory
+        required: true
+        type: string
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: pwsh
+jobs:
+  gui:
+    runs-on: [self-hosted, Windows, X64, windows-11, opensim-gui]
+    timeout-minutes: 35
+    env:
+      GUI_ROOT: ${{ inputs.opensim_root }}
+      RESOURCES_ROOT: ${{ inputs.resources_root }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verify actual Windows 11 and install isolated environment
+        run: |
+          $plugin = Join-Path $env:GUI_ROOT 'opensim/config/Modules/org-opensim-mcp-autobridge.xml'
+          if (-not (Test-Path -LiteralPath $plugin)) { throw 'Install the supplied GUI startup plugin on this dedicated runner once before requesting desktop tests.' }
+          $scratch = Join-Path $env:RUNNER_TEMP 'opensim-mcp-desktop'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/install.ps1 -TempRoot $scratch -WithTests -SkipCodexRegistration
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Own two test GUI processes without modifying a user's model
+        run: |
+          $scratch = Join-Path $env:RUNNER_TEMP 'opensim-mcp-desktop'
+          . ./scripts/env.ps1 -TempRoot (Join-Path $scratch 'tests') -ResultsRoot (Join-Path $scratch 'results') -OpenSimRoot $env:GUI_ROOT -EnableScripts
+          & ./.venv/Scripts/python.exe -B ./scripts/regression_gui_lifecycle.py --opensim-root $env:GUI_ROOT --resources-root $env:RESOURCES_ROOT --examples (Join-Path $PWD 'examples') --report (Join-Path $scratch 'gui-lifecycle.json')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        if: always()
+        with:
+          name: windows11-desktop-evidence
+          path: ${{ runner.temp }}/opensim-mcp-desktop/*.json
+          if-no-files-found: warn

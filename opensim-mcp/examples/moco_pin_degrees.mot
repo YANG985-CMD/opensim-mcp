@@ -1,0 +1,18 @@
+Static ninety-degree pin
+version=1
+nRows=11
+nColumns=2
+inDegrees=yes
+endheader
+time	angle
+0.0	90
+0.1	90
+0.2	90
+0.3	90
+0.4	90
+0.5	90
+0.6	90
+0.7	90
+0.8	90
+0.9	90
+1.0	90

@@ -1,0 +1,2254 @@
+{
+  "version": "0.9.0",
+  "date": "2026-10-29",
+  "adapter_tests_passed": 152,
+  "stdio": {
+    "tool_count": 73,
+    "c3d_to_ik_id": {
+      "ik_analytic_max_error_m": 1.3877787807814457e-17,
+      "expected_force_N": -5.0,
+      "rows": 11,
+      "explicit_rotation_sign_and_platform_mapping": true
+    },
+    "eight_stage_muscle_pipeline": {
+      "run_id": "c5ed1c16b9974cbcad2feed9c40b1bf9",
+      "run_file": "${SCRATCH}\\v09-results\\pipelines\\runs\\c5ed1c16b9974cbcad2feed9c40b1bf9\\run.json",
+      "computed_stages": 8,
+      "reused_stages": 0,
+      "quality_status": "configured_checks_passed",
+      "html_file": "${SCRATCH}\\v09-results\\jobs\\c5ed1c16b9974cbcad2feed9c40b1bf9\\artifacts\\project-c5ed1c16b9974cbcad2feed9c40b1bf9\\report.html",
+      "markdown_file": "${SCRATCH}\\v09-results\\jobs\\c5ed1c16b9974cbcad2feed9c40b1bf9\\artifacts\\project-c5ed1c16b9974cbcad2feed9c40b1bf9\\report.md",
+      "report_file": "${SCRATCH}\\v09-results\\jobs\\c5ed1c16b9974cbcad2feed9c40b1bf9\\artifacts\\project-c5ed1c16b9974cbcad2feed9c40b1bf9\\report.json"
+    },
+    "rra": {
+      "quality": {
+        "native_completed": true,
+        "coordinate_fit": {
+          "slider_tx": {
+            "rms": 5.921791109079963e-18,
+            "max_abs": 2.7755575615628914e-17,
+            "unit": "m"
+          }
+        },
+        "original_muscles_restored": 0,
+        "com_adjustment_body": null,
+        "recommended_mass_changes_applied": false,
+        "rows": 1000,
+        "no_claim_of_residual_reduction": true,
+        "requested_time_range_s": [
+          0.0,
+          1.0
+        ],
+        "time_range_s": [
+          0.0,
+          0.999
+        ],
+        "boundary_time_note": "Native CMC may omit up to 1 ms at a boundary; comparison uses the actual common interval.",
+        "body_com_change_m": {
+          "block": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+      "scope": "Native RRATool with explicit torque/residual profile; original actuators restored. Review ID comparison and coordinate errors before adopting adjusted model/kinematics.",
+      "status": "completed",
+      "workflow": "rra",
+      "files": [
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\model.osim",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\rra_coordinates.mot",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\rra_forces.sto",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\rra_tasks.xml",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\rra_controls.xml",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\rra_setup.xml",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\rra_quality.json",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\comparison_before.sto",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\comparison_after.sto",
+        "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\id_comparison.json"
+      ],
+      "input_hashes": {
+        "model": "04e49d8a7739c523be79db90e157d81326f96286680d718405648833ae321d1e",
+        "coordinates.sto": "809bcd5c5ca262d44b616f6e8e0890076367351042bacadba10512badb0b23d1"
+      },
+      "elapsed_seconds": 2.047,
+      "parameters": {
+        "actuators": [
+          {
+            "name": "FX",
+            "coordinate": "slider_tx",
+            "role": "residual",
+            "unit": "N",
+            "optimal_force": 1.0,
+            "min_control": -1000.0,
+            "max_control": 1000.0
+          }
+        ],
+        "task_weights": {
+          "slider_tx": 1.0
+        },
+        "external_forces": [],
+        "no_external_loads": true,
+        "start_time": 0.0,
+        "end_time": 1.0,
+        "lowpass_cutoff_hz": 2.0,
+        "adjust_com_body": null,
+        "kp": 100.0,
+        "kv": 20.0,
+        "in_degrees": "yes",
+        "max_tracking_error": {}
+      },
+      "model_file": "${SCRATCH}\\v09-results\\rra-4f70588fc296467c812e2df11925dba2\\model.osim",
+      "id_comparison": {
+        "before": {
+          "FX": {
+            "rms": 0.11381207807933076,
+            "peak_abs": 0.23908085,
+            "unit": "N"
+          }
+        },
+        "after": {
+          "FX": {
+            "rms": 0.11381207807933076,
+            "peak_abs": 0.23908085,
+            "unit": "N"
+          }
+        },
+        "files_before": [
+          "${SCRATCH}\\v09-results\\id-e737098ebf374c0faa1ad25dc30e992b\\inverse_dynamics.sto"
+        ],
+        "files_after": [
+          "${SCRATCH}\\v09-results\\id-08881c0eea324920a68c40a089e8d4d9\\inverse_dynamics.sto"
+        ],
+        "time_range_s": [
+          0.0,
+          0.9
+        ],
+        "sampling": "Both trajectories sampled linearly on common original reference times, without extrapolation; same filter/window.",
+        "note": "Measured before/after residual coordinate forces; a reduction is not guaranteed. Original actuators restored; mass recommendations are not applied."
+      }
+    },
+    "passed": true
+  },
+  "native_studies": {
+    "passed": true,
+    "mesh": {
+      "profile": "moco_inverse",
+      "runs": [
+        {
+          "mesh_interval_s": 0.1,
+          "result": {
+            "quality": {
+              "solver_success": true,
+              "solver_status": "Solve_Succeeded",
+              "iterations": 1,
+              "objective": 0.04000000000000001,
+              "rows": 21,
+              "mesh_interval_s": 0.1,
+              "mesh_stability_assessed": false,
+              "coordinate_fit": {
+                "slider_tx": {
+                  "rms": 0.0,
+                  "max_abs": 0.0,
+                  "unit": "m"
+                }
+              },
+              "reference_comparison": "Linear interpolation to solver nodes; no extrapolation; rad/m.",
+              "max_control_bound_violation": 0.0,
+              "prescribed_kinematics_note": "MocoInverse may assemble constraints; differences include spline versus linear reference interpolation. Review coordinate_fit; no exact reference match is asserted."
+            },
+            "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+            "scope": "moco_inverse: explicit reference, external-load assumption and bounded solver; native convergence and sampled quantities only. No automatic reserve actuators, clinical acceptance or mesh-convergence claim.",
+            "status": "completed",
+            "workflow": "moco_inverse",
+            "files": [
+              "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\solution.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\states.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\controls.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\quality.json",
+              "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\reference_states.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\tool.xml"
+            ],
+            "input_hashes": {
+              "model": "8e3c38fc41b82730f2c75bd3480de0afd84854a14b960aca770f74091b749f3e",
+              "reference.mot": "3b8803f4727f1cfe595c38a6102cb365d45d20e78aa056e6593c4bef74a108a3"
+            },
+            "elapsed_seconds": 1.297,
+            "parameters": {
+              "initial_time": 0.0,
+              "final_time": 1.0,
+              "external_forces": [],
+              "no_external_loads": true,
+              "ignore_tendon_compliance": false,
+              "minimize_sum_squared_activations": false,
+              "mesh_interval": 0.1,
+              "max_iterations": 500,
+              "convergence_tolerance": 0.0001,
+              "constraint_tolerance": 0.0001
+            }
+          }
+        },
+        {
+          "mesh_interval_s": 0.05,
+          "result": {
+            "quality": {
+              "solver_success": true,
+              "solver_status": "Solve_Succeeded",
+              "iterations": 1,
+              "objective": 0.04000000000000001,
+              "rows": 41,
+              "mesh_interval_s": 0.05,
+              "mesh_stability_assessed": false,
+              "coordinate_fit": {
+                "slider_tx": {
+                  "rms": 0.0,
+                  "max_abs": 0.0,
+                  "unit": "m"
+                }
+              },
+              "reference_comparison": "Linear interpolation to solver nodes; no extrapolation; rad/m.",
+              "max_control_bound_violation": 0.0,
+              "prescribed_kinematics_note": "MocoInverse may assemble constraints; differences include spline versus linear reference interpolation. Review coordinate_fit; no exact reference match is asserted."
+            },
+            "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+            "scope": "moco_inverse: explicit reference, external-load assumption and bounded solver; native convergence and sampled quantities only. No automatic reserve actuators, clinical acceptance or mesh-convergence claim.",
+            "status": "completed",
+            "workflow": "moco_inverse",
+            "files": [
+              "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\solution.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\states.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\controls.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\quality.json",
+              "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\reference_states.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\tool.xml"
+            ],
+            "input_hashes": {
+              "model": "8e3c38fc41b82730f2c75bd3480de0afd84854a14b960aca770f74091b749f3e",
+              "reference.mot": "3b8803f4727f1cfe595c38a6102cb365d45d20e78aa056e6593c4bef74a108a3"
+            },
+            "elapsed_seconds": 1.344,
+            "parameters": {
+              "initial_time": 0.0,
+              "final_time": 1.0,
+              "external_forces": [],
+              "no_external_loads": true,
+              "ignore_tendon_compliance": false,
+              "minimize_sum_squared_activations": false,
+              "mesh_interval": 0.05,
+              "max_iterations": 500,
+              "convergence_tolerance": 0.0001,
+              "constraint_tolerance": 0.0001
+            }
+          }
+        }
+      ],
+      "comparisons": [
+        {
+          "coarse_interval_s": 0.1,
+          "fine_interval_s": 0.05,
+          "objective_absolute_change": 0.0,
+          "objective_relative_change": 0.0,
+          "states": {
+            "/jointset/slider/slider_tx/value": {
+              "rms": 0.0,
+              "max_abs": 0.0,
+              "unit": "native trajectory column units"
+            },
+            "/jointset/slider/slider_tx/speed": {
+              "rms": 0.0,
+              "max_abs": 0.0,
+              "unit": "native trajectory column units"
+            }
+          },
+          "controls": {
+            "/forceset/puller": {
+              "rms": 5.3706759441744775e-17,
+              "max_abs": 8.326672684688674e-17,
+              "unit": "native trajectory column units"
+            }
+          },
+          "objective_pass": true,
+          "selected_trajectory_checks_pass": true,
+          "all_state_and_control_columns_assessed": false,
+          "configured_checks_pass": true,
+          "status": "objective_only"
+        }
+      ],
+      "state_rms_limits": {},
+      "control_rms_limits": {},
+      "objective_relative_tolerance": 0.02,
+      "objective_absolute_tolerance": 1e-08,
+      "status": "objective_only",
+      "scope": "Successive native mesh comparisons on shared trajectory times. Caller thresholds are not physiological validation or a mathematical convergence proof.",
+      "report_file": "${SCRATCH}\\studies-results\\mesh-study-dd4f2a00012a47b780c56c20be069559\\mesh_study.json",
+      "files": [
+        "${SCRATCH}\\studies-results\\mesh-study-dd4f2a00012a47b780c56c20be069559\\mesh_study.json",
+        "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\solution.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\controls.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\quality.json",
+        "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\reference_states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-a315aa9993c245d7b2bf76b49cacb9df\\tool.xml",
+        "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\solution.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\controls.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\quality.json",
+        "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\reference_states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-06ad0a53f4fa4654a576d32564cc8dec\\tool.xml"
+      ]
+    },
+    "sensitivity": {
+      "profile": "moco_inverse",
+      "baseline": {
+        "quality": {
+          "solver_success": true,
+          "solver_status": "Solve_Succeeded",
+          "iterations": 1,
+          "objective": 0.04000000000000001,
+          "rows": 21,
+          "mesh_interval_s": 0.1,
+          "mesh_stability_assessed": false,
+          "coordinate_fit": {
+            "slider_tx": {
+              "rms": 0.0,
+              "max_abs": 0.0,
+              "unit": "m"
+            }
+          },
+          "reference_comparison": "Linear interpolation to solver nodes; no extrapolation; rad/m.",
+          "max_control_bound_violation": 0.0,
+          "prescribed_kinematics_note": "MocoInverse may assemble constraints; differences include spline versus linear reference interpolation. Review coordinate_fit; no exact reference match is asserted."
+        },
+        "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+        "scope": "moco_inverse: explicit reference, external-load assumption and bounded solver; native convergence and sampled quantities only. No automatic reserve actuators, clinical acceptance or mesh-convergence claim.",
+        "status": "completed",
+        "workflow": "moco_inverse",
+        "files": [
+          "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\solution.sto",
+          "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\states.sto",
+          "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\controls.sto",
+          "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\quality.json",
+          "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\reference_states.sto",
+          "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\tool.xml"
+        ],
+        "input_hashes": {
+          "model": "8e3c38fc41b82730f2c75bd3480de0afd84854a14b960aca770f74091b749f3e",
+          "reference.mot": "3b8803f4727f1cfe595c38a6102cb365d45d20e78aa056e6593c4bef74a108a3"
+        },
+        "elapsed_seconds": 1.343,
+        "parameters": {
+          "initial_time": 0.0,
+          "final_time": 1.0,
+          "external_forces": [],
+          "no_external_loads": true,
+          "ignore_tendon_compliance": false,
+          "minimize_sum_squared_activations": false,
+          "mesh_interval": 0.1,
+          "max_iterations": 500,
+          "convergence_tolerance": 0.0001,
+          "constraint_tolerance": 0.0001
+        }
+      },
+      "cases": [
+        {
+          "label": "double muscle strength",
+          "variation": {
+            "label": "double muscle strength",
+            "model_edits": [
+              {
+                "component_type": "muscle",
+                "component_name": "puller",
+                "property_name": "max_isometric_force",
+                "value": 200.0
+              }
+            ]
+          },
+          "result": {
+            "quality": {
+              "solver_success": true,
+              "solver_status": "Solve_Succeeded",
+              "iterations": 1,
+              "objective": 0.010000000000000007,
+              "rows": 21,
+              "mesh_interval_s": 0.1,
+              "mesh_stability_assessed": false,
+              "coordinate_fit": {
+                "slider_tx": {
+                  "rms": 0.0,
+                  "max_abs": 0.0,
+                  "unit": "m"
+                }
+              },
+              "reference_comparison": "Linear interpolation to solver nodes; no extrapolation; rad/m.",
+              "max_control_bound_violation": 0.0,
+              "prescribed_kinematics_note": "MocoInverse may assemble constraints; differences include spline versus linear reference interpolation. Review coordinate_fit; no exact reference match is asserted."
+            },
+            "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+            "scope": "moco_inverse: explicit reference, external-load assumption and bounded solver; native convergence and sampled quantities only. No automatic reserve actuators, clinical acceptance or mesh-convergence claim.",
+            "status": "completed",
+            "workflow": "moco_inverse",
+            "files": [
+              "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\solution.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\states.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\controls.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\quality.json",
+              "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\reference_states.sto",
+              "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\tool.xml"
+            ],
+            "input_hashes": {
+              "model": "5c39066986b05e93a551e7a784e05d29a9f6a92f3f2f753a12750f059b14a1d8",
+              "reference.mot": "3b8803f4727f1cfe595c38a6102cb365d45d20e78aa056e6593c4bef74a108a3"
+            },
+            "elapsed_seconds": 1.281,
+            "parameters": {
+              "initial_time": 0.0,
+              "final_time": 1.0,
+              "external_forces": [],
+              "no_external_loads": true,
+              "ignore_tendon_compliance": false,
+              "minimize_sum_squared_activations": false,
+              "mesh_interval": 0.1,
+              "max_iterations": 500,
+              "convergence_tolerance": 0.0001,
+              "constraint_tolerance": 0.0001
+            }
+          },
+          "objective_change": -0.03,
+          "objective_relative_change": -0.7499999999999998,
+          "state_difference": {
+            "/jointset/slider/slider_tx/value": {
+              "rms": 0.0,
+              "max_abs": 0.0,
+              "unit": "native trajectory column units"
+            },
+            "/jointset/slider/slider_tx/speed": {
+              "rms": 0.0,
+              "max_abs": 0.0,
+              "unit": "native trajectory column units"
+            }
+          }
+        }
+      ],
+      "status": "completed",
+      "scope": "Explicit finite perturbations. Not statistical uncertainty, population validation or a causal clinical claim.",
+      "report_file": "${SCRATCH}\\studies-results\\sensitivity-01bc4cd9e65840a4a3c302ff088328fd\\sensitivity.json",
+      "files": [
+        "${SCRATCH}\\studies-results\\sensitivity-01bc4cd9e65840a4a3c302ff088328fd\\sensitivity.json",
+        "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\solution.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\controls.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\quality.json",
+        "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\reference_states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-f878bc8b6622404d93b7d8e80e8e568f\\tool.xml",
+        "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\solution.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\controls.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\quality.json",
+        "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\reference_states.sto",
+        "${SCRATCH}\\studies-results\\moco_inverse-3edcaf44297646fd914753161ac11532\\tool.xml"
+      ]
+    }
+  },
+  "human_rra": {
+    "quality": {
+      "native_completed": true,
+      "coordinate_fit": {
+        "pelvis_tilt": {
+          "rms": 0.0018497023281608287,
+          "max_abs": 0.0031218511994272335,
+          "unit": "rad"
+        },
+        "pelvis_list": {
+          "rms": 0.00422756648019422,
+          "max_abs": 0.010254109831429964,
+          "unit": "rad"
+        },
+        "pelvis_rotation": {
+          "rms": 0.010251119226863344,
+          "max_abs": 0.02447265010644919,
+          "unit": "rad"
+        },
+        "pelvis_tx": {
+          "rms": 0.013615076401445459,
+          "max_abs": 0.026784761608131702,
+          "unit": "m"
+        },
+        "pelvis_ty": {
+          "rms": 0.0018339135837160336,
+          "max_abs": 0.002840840968129754,
+          "unit": "m"
+        },
+        "pelvis_tz": {
+          "rms": 0.010335339979137236,
+          "max_abs": 0.021323624422155116,
+          "unit": "m"
+        },
+        "hip_flexion_r": {
+          "rms": 0.004462862628670672,
+          "max_abs": 0.014080308804355568,
+          "unit": "rad"
+        },
+        "hip_adduction_r": {
+          "rms": 0.02688106543364867,
+          "max_abs": 0.05608996239522799,
+          "unit": "rad"
+        },
+        "hip_rotation_r": {
+          "rms": 0.009521405767690403,
+          "max_abs": 0.016840079798762272,
+          "unit": "rad"
+        },
+        "knee_angle_r": {
+          "rms": 0.008218123031840831,
+          "max_abs": 0.01631116514889111,
+          "unit": "rad"
+        },
+        "ankle_angle_r": {
+          "rms": 0.0037830214212670734,
+          "max_abs": 0.00634908880106902,
+          "unit": "rad"
+        },
+        "subtalar_angle_r": {
+          "rms": 0.0031307416805993796,
+          "max_abs": 0.006266815235806622,
+          "unit": "rad"
+        },
+        "mtp_angle_r": {
+          "rms": 0.00029747203463550975,
+          "max_abs": 0.0008261968054591425,
+          "unit": "rad"
+        },
+        "hip_flexion_l": {
+          "rms": 0.049019361824469976,
+          "max_abs": 0.09307421224246659,
+          "unit": "rad"
+        },
+        "hip_adduction_l": {
+          "rms": 0.09445251376254339,
+          "max_abs": 0.19131812932684233,
+          "unit": "rad"
+        },
+        "hip_rotation_l": {
+          "rms": 0.04037490904241611,
+          "max_abs": 0.0964729158241729,
+          "unit": "rad"
+        },
+        "knee_angle_l": {
+          "rms": 0.05226465158734159,
+          "max_abs": 0.10658414020973739,
+          "unit": "rad"
+        },
+        "ankle_angle_l": {
+          "rms": 0.19934808463887152,
+          "max_abs": 0.5024590606743957,
+          "unit": "rad"
+        },
+        "subtalar_angle_l": {
+          "rms": 0.35699699555066494,
+          "max_abs": 0.8918305366197661,
+          "unit": "rad"
+        },
+        "mtp_angle_l": {
+          "rms": 0.5410818561227495,
+          "max_abs": 1.191661357088445,
+          "unit": "rad"
+        },
+        "lumbar_extension": {
+          "rms": 0.054231545848489285,
+          "max_abs": 0.10728898128332254,
+          "unit": "rad"
+        },
+        "lumbar_bending": {
+          "rms": 0.03662368414144721,
+          "max_abs": 0.07983088934121585,
+          "unit": "rad"
+        },
+        "lumbar_rotation": {
+          "rms": 0.0032390079304859846,
+          "max_abs": 0.008084241826680369,
+          "unit": "rad"
+        }
+      },
+      "original_muscles_restored": 54,
+      "com_adjustment_body": "torso",
+      "recommended_mass_changes_applied": false,
+      "rows": 208,
+      "no_claim_of_residual_reduction": true,
+      "requested_time_range_s": [
+        0.4,
+        0.6
+      ],
+      "time_range_s": [
+        0.4,
+        0.599
+      ],
+      "boundary_time_note": "Native CMC may omit up to 1 ms at a boundary; comparison uses the actual common interval."
+    },
+    "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+    "scope": "Native RRATool with explicit torque/residual profile; original actuators restored. Review ID comparison and coordinate errors before adopting adjusted model/kinematics.",
+    "status": "completed",
+    "workflow": "rra",
+    "files": [
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\model.osim",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_coordinates.mot",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_forces.sto",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_tasks.xml",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_controls.xml",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_setup.xml",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_quality.json",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\rra_loads.xml",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\comparison_before.sto",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\comparison_after.sto",
+      "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\id_comparison.json"
+    ],
+    "input_hashes": {
+      "model": "8f2628983a7eae72ef1169c923f8a19be975522a04940e006cf98b9dfa7973c0",
+      "coordinates.sto": "98538187452f8d03e5d49a352ac4f29cb53fee8aa725d73c27a1ae82296fdfa2",
+      "loads.sto": "69a5e8633f8666bc192abd8069e6812fe7b4c8bb8968dc3254d4824abf263662"
+    },
+    "elapsed_seconds": 3.11,
+    "parameters": {
+      "actuators": [
+        {
+          "name": "MZ",
+          "coordinate": "pelvis_tilt",
+          "role": "residual",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "MX",
+          "coordinate": "pelvis_list",
+          "role": "residual",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "MY",
+          "coordinate": "pelvis_rotation",
+          "role": "residual",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "FX",
+          "coordinate": "pelvis_tx",
+          "role": "residual",
+          "unit": "N",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "FY",
+          "coordinate": "pelvis_ty",
+          "role": "residual",
+          "unit": "N",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "FZ",
+          "coordinate": "pelvis_tz",
+          "role": "residual",
+          "unit": "N",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_hip_flexion_r",
+          "coordinate": "hip_flexion_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_hip_adduction_r",
+          "coordinate": "hip_adduction_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_hip_rotation_r",
+          "coordinate": "hip_rotation_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_knee_angle_r",
+          "coordinate": "knee_angle_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_ankle_angle_r",
+          "coordinate": "ankle_angle_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_subtalar_angle_r",
+          "coordinate": "subtalar_angle_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_mtp_angle_r",
+          "coordinate": "mtp_angle_r",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_hip_flexion_l",
+          "coordinate": "hip_flexion_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_hip_adduction_l",
+          "coordinate": "hip_adduction_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_hip_rotation_l",
+          "coordinate": "hip_rotation_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_knee_angle_l",
+          "coordinate": "knee_angle_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_ankle_angle_l",
+          "coordinate": "ankle_angle_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_subtalar_angle_l",
+          "coordinate": "subtalar_angle_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_mtp_angle_l",
+          "coordinate": "mtp_angle_l",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_lumbar_extension",
+          "coordinate": "lumbar_extension",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_lumbar_bending",
+          "coordinate": "lumbar_bending",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        },
+        {
+          "name": "reserve_lumbar_rotation",
+          "coordinate": "lumbar_rotation",
+          "role": "reserve",
+          "unit": "Nm",
+          "optimal_force": 1.0,
+          "min_control": -10000.0,
+          "max_control": 10000.0
+        }
+      ],
+      "task_weights": {
+        "pelvis_tilt": 1.0,
+        "pelvis_list": 1.0,
+        "pelvis_rotation": 1.0,
+        "pelvis_tx": 1.0,
+        "pelvis_ty": 1.0,
+        "pelvis_tz": 1.0,
+        "hip_flexion_r": 1.0,
+        "hip_adduction_r": 1.0,
+        "hip_rotation_r": 1.0,
+        "knee_angle_r": 1.0,
+        "ankle_angle_r": 1.0,
+        "subtalar_angle_r": 1.0,
+        "mtp_angle_r": 1.0,
+        "hip_flexion_l": 1.0,
+        "hip_adduction_l": 1.0,
+        "hip_rotation_l": 1.0,
+        "knee_angle_l": 1.0,
+        "ankle_angle_l": 1.0,
+        "subtalar_angle_l": 1.0,
+        "mtp_angle_l": 1.0,
+        "lumbar_extension": 1.0,
+        "lumbar_bending": 1.0,
+        "lumbar_rotation": 1.0
+      },
+      "external_forces": [
+        {
+          "name": "right",
+          "applied_to_body": "calcn_r",
+          "force_identifier": "ground_force_v",
+          "point_identifier": "ground_force_p",
+          "torque_identifier": "ground_torque_",
+          "force_expressed_in_body": "ground",
+          "point_expressed_in_body": "ground"
+        },
+        {
+          "name": "left",
+          "applied_to_body": "calcn_l",
+          "force_identifier": "1_ground_force_v",
+          "point_identifier": "1_ground_force_p",
+          "torque_identifier": "1_ground_torque_",
+          "force_expressed_in_body": "ground",
+          "point_expressed_in_body": "ground"
+        }
+      ],
+      "no_external_loads": false,
+      "start_time": 0.4,
+      "end_time": 0.6,
+      "lowpass_cutoff_hz": 6.0,
+      "adjust_com_body": "torso",
+      "kp": 100.0,
+      "kv": 20.0,
+      "in_degrees": "yes",
+      "max_tracking_error": {}
+    },
+    "model_file": "${SCRATCH}\\human09-results\\rra-babc66cc52634c24a5fa482fd622da98\\model.osim",
+    "id_comparison": {
+      "before": {
+        "MZ": {
+          "rms": 17.02032034871242,
+          "peak_abs": 35.06679972,
+          "unit": "Nm"
+        },
+        "MX": {
+          "rms": 26.441422270388937,
+          "peak_abs": 54.54892953,
+          "unit": "Nm"
+        },
+        "MY": {
+          "rms": 11.901849742253809,
+          "peak_abs": 23.08542806,
+          "unit": "Nm"
+        },
+        "FX": {
+          "rms": 20.902704472905047,
+          "peak_abs": 37.83142524,
+          "unit": "N"
+        },
+        "FY": {
+          "rms": 92.09660640880482,
+          "peak_abs": 172.54456658,
+          "unit": "N"
+        },
+        "FZ": {
+          "rms": 69.35488277027936,
+          "peak_abs": 142.11268681,
+          "unit": "N"
+        }
+      },
+      "after": {
+        "MZ": {
+          "rms": 25.75999616248476,
+          "peak_abs": 53.95404326,
+          "unit": "Nm"
+        },
+        "MX": {
+          "rms": 23.712102539419906,
+          "peak_abs": 45.68656138,
+          "unit": "Nm"
+        },
+        "MY": {
+          "rms": 14.369600679307764,
+          "peak_abs": 32.8429326,
+          "unit": "Nm"
+        },
+        "FX": {
+          "rms": 13.71134648619243,
+          "peak_abs": 24.93215731,
+          "unit": "N"
+        },
+        "FY": {
+          "rms": 110.87257881299465,
+          "peak_abs": 222.13852198,
+          "unit": "N"
+        },
+        "FZ": {
+          "rms": 69.85317158363206,
+          "peak_abs": 146.25315019,
+          "unit": "N"
+        }
+      },
+      "files_before": [
+        "${SCRATCH}\\human09-results\\id-107ee347acde43749131cfe6bd72e711\\inverse_dynamics.sto"
+      ],
+      "files_after": [
+        "${SCRATCH}\\human09-results\\id-df62ed20636f4de2a773800ad2a9866c\\inverse_dynamics.sto"
+      ],
+      "time_range_s": [
+        0.4,
+        0.58333333
+      ],
+      "sampling": "Both trajectories sampled linearly on common original reference times, without extrapolation; same filter/window.",
+      "note": "Measured before/after residual coordinate forces; a reduction is not guaranteed. Original actuators restored; mass recommendations are not applied."
+    }
+  },
+  "human_moco_mesh": {
+    "profile": "moco_inverse",
+    "runs": [
+      {
+        "mesh_interval_s": 0.015,
+        "result": {
+          "quality": {
+            "solver_success": true,
+            "solver_status": "Solve_Succeeded",
+            "iterations": 44,
+            "objective": 2712.3873331524924,
+            "rows": 15,
+            "mesh_interval_s": 0.015,
+            "mesh_stability_assessed": false,
+            "coordinate_fit": {
+              "pelvis_tilt": {
+                "rms": 0.0002962008732783288,
+                "max_abs": 0.0007072341413716932,
+                "unit": "rad"
+              },
+              "pelvis_list": {
+                "rms": 0.00043445425568870493,
+                "max_abs": 0.0008003767562194848,
+                "unit": "rad"
+              },
+              "pelvis_rotation": {
+                "rms": 0.0004604233059743772,
+                "max_abs": 0.0009917034903403274,
+                "unit": "rad"
+              },
+              "pelvis_tx": {
+                "rms": 5.898591402737408e-05,
+                "max_abs": 0.0001399359864275862,
+                "unit": "m"
+              },
+              "pelvis_ty": {
+                "rms": 5.8649048791307685e-05,
+                "max_abs": 0.00014493119549241484,
+                "unit": "m"
+              },
+              "pelvis_tz": {
+                "rms": 7.793160887318544e-05,
+                "max_abs": 0.00022564187124763171,
+                "unit": "m"
+              },
+              "hip_flexion_r": {
+                "rms": 0.0005828140276106689,
+                "max_abs": 0.0012136937045880147,
+                "unit": "rad"
+              },
+              "hip_adduction_r": {
+                "rms": 0.00043818770919830234,
+                "max_abs": 0.0009968547158503982,
+                "unit": "rad"
+              },
+              "hip_rotation_r": {
+                "rms": 0.0008045059674107568,
+                "max_abs": 0.002413155329820227,
+                "unit": "rad"
+              },
+              "knee_angle_r": {
+                "rms": 0.0006747396144883134,
+                "max_abs": 0.0011127437085957093,
+                "unit": "rad"
+              },
+              "ankle_angle_r": {
+                "rms": 0.00021026001232563006,
+                "max_abs": 0.0003898574076675876,
+                "unit": "rad"
+              },
+              "subtalar_angle_r": {
+                "rms": 6.141522415280195e-10,
+                "max_abs": 1.2003793671088464e-09,
+                "unit": "rad"
+              },
+              "mtp_angle_r": {
+                "rms": 0.0,
+                "max_abs": 0.0,
+                "unit": "rad"
+              },
+              "hip_flexion_l": {
+                "rms": 0.00041220745858662483,
+                "max_abs": 0.0007193507598907689,
+                "unit": "rad"
+              },
+              "hip_adduction_l": {
+                "rms": 0.0005527192564870289,
+                "max_abs": 0.000982017288787225,
+                "unit": "rad"
+              },
+              "hip_rotation_l": {
+                "rms": 0.00042784350848689556,
+                "max_abs": 0.0009853283393284583,
+                "unit": "rad"
+              },
+              "knee_angle_l": {
+                "rms": 0.00034835393220011124,
+                "max_abs": 0.0008284176162032565,
+                "unit": "rad"
+              },
+              "ankle_angle_l": {
+                "rms": 0.00012630897218277292,
+                "max_abs": 0.0003110670222648687,
+                "unit": "rad"
+              },
+              "subtalar_angle_l": {
+                "rms": 9.41958615722361e-11,
+                "max_abs": 1.7551421761116e-10,
+                "unit": "rad"
+              },
+              "mtp_angle_l": {
+                "rms": 0.0,
+                "max_abs": 0.0,
+                "unit": "rad"
+              },
+              "lumbar_extension": {
+                "rms": 0.0004164782778625516,
+                "max_abs": 0.0013044178035115372,
+                "unit": "rad"
+              },
+              "lumbar_bending": {
+                "rms": 0.0005970039430055852,
+                "max_abs": 0.0014722257576801892,
+                "unit": "rad"
+              },
+              "lumbar_rotation": {
+                "rms": 0.00047594820796658104,
+                "max_abs": 0.0012426370967019845,
+                "unit": "rad"
+              }
+            },
+            "reference_comparison": "Linear interpolation to solver nodes; no extrapolation; rad/m.",
+            "max_control_bound_violation": 9.19065095729421e-09,
+            "prescribed_kinematics_note": "MocoInverse may assemble constraints; differences include spline versus linear reference interpolation. Review coordinate_fit; no exact reference match is asserted."
+          },
+          "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+          "scope": "moco_inverse: explicit reference, external-load assumption and bounded solver; native convergence and sampled quantities only. No automatic reserve actuators, clinical acceptance or mesh-convergence claim.",
+          "status": "completed",
+          "workflow": "moco_inverse",
+          "files": [
+            "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\solution.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\states.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\controls.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\quality.json",
+            "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\reference_states.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\tool.xml"
+          ],
+          "input_hashes": {
+            "model": "82fb55c5dfe635974116fb988343159aff70abd4be562222106de11970252a46",
+            "reference.mot": "98538187452f8d03e5d49a352ac4f29cb53fee8aa725d73c27a1ae82296fdfa2",
+            "loads.sto": "69a5e8633f8666bc192abd8069e6812fe7b4c8bb8968dc3254d4824abf263662"
+          },
+          "elapsed_seconds": 10.172,
+          "parameters": {
+            "initial_time": 0.4,
+            "final_time": 0.5,
+            "external_forces": [
+              {
+                "name": "right",
+                "applied_to_body": "calcn_r",
+                "force_identifier": "ground_force_v",
+                "point_identifier": "ground_force_p",
+                "torque_identifier": "ground_torque_",
+                "force_expressed_in_body": "ground",
+                "point_expressed_in_body": "ground"
+              },
+              {
+                "name": "left",
+                "applied_to_body": "calcn_l",
+                "force_identifier": "1_ground_force_v",
+                "point_identifier": "1_ground_force_p",
+                "torque_identifier": "1_ground_torque_",
+                "force_expressed_in_body": "ground",
+                "point_expressed_in_body": "ground"
+              }
+            ],
+            "no_external_loads": false,
+            "ignore_tendon_compliance": true,
+            "minimize_sum_squared_activations": false,
+            "mesh_interval": 0.015,
+            "max_iterations": 1000,
+            "convergence_tolerance": 0.0001,
+            "constraint_tolerance": 0.0001
+          }
+        }
+      },
+      {
+        "mesh_interval_s": 0.0075,
+        "result": {
+          "quality": {
+            "solver_success": true,
+            "solver_status": "Solve_Succeeded",
+            "iterations": 34,
+            "objective": 2690.498195675316,
+            "rows": 29,
+            "mesh_interval_s": 0.0075,
+            "mesh_stability_assessed": false,
+            "coordinate_fit": {
+              "pelvis_tilt": {
+                "rms": 0.0003030311829099146,
+                "max_abs": 0.0007072341413716932,
+                "unit": "rad"
+              },
+              "pelvis_list": {
+                "rms": 0.0004457417949826357,
+                "max_abs": 0.0008003767562194848,
+                "unit": "rad"
+              },
+              "pelvis_rotation": {
+                "rms": 0.0004727459558680219,
+                "max_abs": 0.0010014270702677739,
+                "unit": "rad"
+              },
+              "pelvis_tx": {
+                "rms": 5.880153742287077e-05,
+                "max_abs": 0.0001557917704688716,
+                "unit": "m"
+              },
+              "pelvis_ty": {
+                "rms": 6.091109069156921e-05,
+                "max_abs": 0.00014493119549241484,
+                "unit": "m"
+              },
+              "pelvis_tz": {
+                "rms": 7.964387120265846e-05,
+                "max_abs": 0.00022564187124763171,
+                "unit": "m"
+              },
+              "hip_flexion_r": {
+                "rms": 0.0005787528279016538,
+                "max_abs": 0.0013521813119357629,
+                "unit": "rad"
+              },
+              "hip_adduction_r": {
+                "rms": 0.0004399652201006592,
+                "max_abs": 0.0011099041232572604,
+                "unit": "rad"
+              },
+              "hip_rotation_r": {
+                "rms": 0.0008246162701088206,
+                "max_abs": 0.0024141916023185384,
+                "unit": "rad"
+              },
+              "knee_angle_r": {
+                "rms": 0.0006808363662811728,
+                "max_abs": 0.0012649288938283432,
+                "unit": "rad"
+              },
+              "ankle_angle_r": {
+                "rms": 0.00021501230446768126,
+                "max_abs": 0.0003898574076675876,
+                "unit": "rad"
+              },
+              "subtalar_angle_r": {
+                "rms": 6.3000051471968e-10,
+                "max_abs": 1.2003793671088464e-09,
+                "unit": "rad"
+              },
+              "mtp_angle_r": {
+                "rms": 0.0,
+                "max_abs": 0.0,
+                "unit": "rad"
+              },
+              "hip_flexion_l": {
+                "rms": 0.00041924220363581265,
+                "max_abs": 0.0007213346436680257,
+                "unit": "rad"
+              },
+              "hip_adduction_l": {
+                "rms": 0.0005655791653020541,
+                "max_abs": 0.0010044074000882044,
+                "unit": "rad"
+              },
+              "hip_rotation_l": {
+                "rms": 0.00043884121981909195,
+                "max_abs": 0.0009853283393284583,
+                "unit": "rad"
+              },
+              "knee_angle_l": {
+                "rms": 0.00035657544862455616,
+                "max_abs": 0.0008284176162032565,
+                "unit": "rad"
+              },
+              "ankle_angle_l": {
+                "rms": 0.00012902267468212865,
+                "max_abs": 0.0003110670222648687,
+                "unit": "rad"
+              },
+              "subtalar_angle_l": {
+                "rms": 9.433818917822373e-11,
+                "max_abs": 1.908374274664025e-10,
+                "unit": "rad"
+              },
+              "mtp_angle_l": {
+                "rms": 0.0,
+                "max_abs": 0.0,
+                "unit": "rad"
+              },
+              "lumbar_extension": {
+                "rms": 0.000431246513493219,
+                "max_abs": 0.0013044178035115372,
+                "unit": "rad"
+              },
+              "lumbar_bending": {
+                "rms": 0.0006156936068893058,
+                "max_abs": 0.0014722257576801892,
+                "unit": "rad"
+              },
+              "lumbar_rotation": {
+                "rms": 0.0004859625104061818,
+                "max_abs": 0.0012426370967019845,
+                "unit": "rad"
+              }
+            },
+            "reference_comparison": "Linear interpolation to solver nodes; no extrapolation; rad/m.",
+            "max_control_bound_violation": 0.0,
+            "prescribed_kinematics_note": "MocoInverse may assemble constraints; differences include spline versus linear reference interpolation. Review coordinate_fit; no exact reference match is asserted."
+          },
+          "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+          "scope": "moco_inverse: explicit reference, external-load assumption and bounded solver; native convergence and sampled quantities only. No automatic reserve actuators, clinical acceptance or mesh-convergence claim.",
+          "status": "completed",
+          "workflow": "moco_inverse",
+          "files": [
+            "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\solution.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\states.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\controls.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\quality.json",
+            "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\reference_states.sto",
+            "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\tool.xml"
+          ],
+          "input_hashes": {
+            "model": "82fb55c5dfe635974116fb988343159aff70abd4be562222106de11970252a46",
+            "reference.mot": "98538187452f8d03e5d49a352ac4f29cb53fee8aa725d73c27a1ae82296fdfa2",
+            "loads.sto": "69a5e8633f8666bc192abd8069e6812fe7b4c8bb8968dc3254d4824abf263662"
+          },
+          "elapsed_seconds": 10.578,
+          "parameters": {
+            "initial_time": 0.4,
+            "final_time": 0.5,
+            "external_forces": [
+              {
+                "name": "right",
+                "applied_to_body": "calcn_r",
+                "force_identifier": "ground_force_v",
+                "point_identifier": "ground_force_p",
+                "torque_identifier": "ground_torque_",
+                "force_expressed_in_body": "ground",
+                "point_expressed_in_body": "ground"
+              },
+              {
+                "name": "left",
+                "applied_to_body": "calcn_l",
+                "force_identifier": "1_ground_force_v",
+                "point_identifier": "1_ground_force_p",
+                "torque_identifier": "1_ground_torque_",
+                "force_expressed_in_body": "ground",
+                "point_expressed_in_body": "ground"
+              }
+            ],
+            "no_external_loads": false,
+            "ignore_tendon_compliance": true,
+            "minimize_sum_squared_activations": false,
+            "mesh_interval": 0.0075,
+            "max_iterations": 1000,
+            "convergence_tolerance": 0.0001,
+            "constraint_tolerance": 0.0001
+          }
+        }
+      }
+    ],
+    "comparisons": [
+      {
+        "coarse_interval_s": 0.015,
+        "fine_interval_s": 0.0075,
+        "objective_absolute_change": 21.88913747717652,
+        "objective_relative_change": 0.008070063301665587,
+        "states": {
+          "/forceset/glut_med1_r/activation": {
+            "rms": 0.021665078059956964,
+            "max_abs": 0.0711158743686429,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med2_r/activation": {
+            "rms": 0.002974640363977531,
+            "max_abs": 0.01002990673908577,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med3_r/activation": {
+            "rms": 0.07932247689188174,
+            "max_abs": 0.2607596111058987,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemlh_r/activation": {
+            "rms": 0.019182766567383755,
+            "max_abs": 0.06687210862581645,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemsh_r/activation": {
+            "rms": 0.054822151500885784,
+            "max_abs": 0.19270237794341644,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/sar_r/activation": {
+            "rms": 0.01066751779959821,
+            "max_abs": 0.02195638945253802,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/add_mag2_r/activation": {
+            "rms": 0.01332554291748506,
+            "max_abs": 0.04607589840251516,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tfl_r/activation": {
+            "rms": 0.008451217584627038,
+            "max_abs": 0.018578209437017726,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/pect_r/activation": {
+            "rms": 0.011860260780294908,
+            "max_abs": 0.03154428325668328,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/grac_r/activation": {
+            "rms": 0.011180799199457973,
+            "max_abs": 0.031918001903143894,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max1_r/activation": {
+            "rms": 0.012751919185816927,
+            "max_abs": 0.035046452071247146,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max2_r/activation": {
+            "rms": 0.017266226460278797,
+            "max_abs": 0.05781882521966153,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max3_r/activation": {
+            "rms": 0.015768854436053966,
+            "max_abs": 0.05320312032784123,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/iliacus_r/activation": {
+            "rms": 0.13438135649592522,
+            "max_abs": 0.4446539852320043,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/psoas_r/activation": {
+            "rms": 0.059642036505624725,
+            "max_abs": 0.20347808889168068,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/quad_fem_r/activation": {
+            "rms": 0.00824931459060797,
+            "max_abs": 0.02173217211653155,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/gem_r/activation": {
+            "rms": 0.007824016069187449,
+            "max_abs": 0.01749721384370512,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/peri_r/activation": {
+            "rms": 0.00628960410738431,
+            "max_abs": 0.015020327796930182,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/rect_fem_r/activation": {
+            "rms": 0.003898670441668641,
+            "max_abs": 0.011877955336921982,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/vas_int_r/activation": {
+            "rms": 0.024083482324702216,
+            "max_abs": 0.08214266368340101,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/med_gas_r/activation": {
+            "rms": 5.674812744486674e-07,
+            "max_abs": 2.1923643255660624e-06,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/soleus_r/activation": {
+            "rms": 4.771372307867779e-07,
+            "max_abs": 1.9611109598853538e-06,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_post_r/activation": {
+            "rms": 4.481024209833728e-07,
+            "max_abs": 1.803566872309384e-06,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_ant_r/activation": {
+            "rms": 5.03989098524367e-05,
+            "max_abs": 0.0002098387455295725,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med1_l/activation": {
+            "rms": 0.01945283850572816,
+            "max_abs": 0.07868909495572207,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med2_l/activation": {
+            "rms": 0.17660454594923272,
+            "max_abs": 0.5492739889879986,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med3_l/activation": {
+            "rms": 0.08754987768658153,
+            "max_abs": 0.26570953930769436,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemlh_l/activation": {
+            "rms": 0.052665325074682905,
+            "max_abs": 0.17037777915231628,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemsh_l/activation": {
+            "rms": 0.22151827884721656,
+            "max_abs": 0.6719079590640609,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/sar_l/activation": {
+            "rms": 0.004112150377687801,
+            "max_abs": 0.008244808146792917,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/add_mag2_l/activation": {
+            "rms": 0.048276983113540235,
+            "max_abs": 0.1534529889204017,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tfl_l/activation": {
+            "rms": 0.0034236594351673595,
+            "max_abs": 0.008072421174426511,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/pect_l/activation": {
+            "rms": 0.029128757056261202,
+            "max_abs": 0.09744430942295385,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/grac_l/activation": {
+            "rms": 0.029474209021180083,
+            "max_abs": 0.09793930303223697,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max1_l/activation": {
+            "rms": 0.011807517777459465,
+            "max_abs": 0.0282649051855242,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max2_l/activation": {
+            "rms": 0.014651852603848993,
+            "max_abs": 0.044483651158644444,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max3_l/activation": {
+            "rms": 0.0336172528275407,
+            "max_abs": 0.1112334804985879,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/iliacus_l/activation": {
+            "rms": 0.0845099077651156,
+            "max_abs": 0.2673308670705888,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/psoas_l/activation": {
+            "rms": 0.04210854394369355,
+            "max_abs": 0.13328085847474946,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/quad_fem_l/activation": {
+            "rms": 0.04592620989895029,
+            "max_abs": 0.14571029411166497,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/gem_l/activation": {
+            "rms": 0.03155896986280641,
+            "max_abs": 0.106676567466502,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/peri_l/activation": {
+            "rms": 0.00460057905007859,
+            "max_abs": 0.008434016949503818,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/rect_fem_l/activation": {
+            "rms": 0.03128908901503262,
+            "max_abs": 0.10609499043389456,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/vas_int_l/activation": {
+            "rms": 0.04191936863550641,
+            "max_abs": 0.137849836477278,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/med_gas_l/activation": {
+            "rms": 0.01103013411747609,
+            "max_abs": 0.02725799993557454,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/soleus_l/activation": {
+            "rms": 0.0014799784601883996,
+            "max_abs": 0.00382458324182941,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_post_l/activation": {
+            "rms": 0.006044582908485226,
+            "max_abs": 0.014440965001897552,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_ant_l/activation": {
+            "rms": 0.00921137090737432,
+            "max_abs": 0.022389811379839475,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/ercspn_r/activation": {
+            "rms": 0.02956988087500131,
+            "max_abs": 0.0666419149977775,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/ercspn_l/activation": {
+            "rms": 0.024878021534129997,
+            "max_abs": 0.059907930147436395,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/intobl_r/activation": {
+            "rms": 0.029264357638621105,
+            "max_abs": 0.0847813083893593,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/intobl_l/activation": {
+            "rms": 0.02683099214820168,
+            "max_abs": 0.07224536066107098,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/extobl_r/activation": {
+            "rms": 0.013182142578952914,
+            "max_abs": 0.035564088149652895,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/extobl_l/activation": {
+            "rms": 0.026553390751566666,
+            "max_abs": 0.07243530828909146,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_tilt/value": {
+            "rms": 7.036611601880007e-05,
+            "max_abs": 0.00016413687310391778,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_tilt/speed": {
+            "rms": 0.007477483768358983,
+            "max_abs": 0.021895388676231278,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_list/value": {
+            "rms": 9.687677820294074e-05,
+            "max_abs": 0.00027151424275768075,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_list/speed": {
+            "rms": 0.008889097015763658,
+            "max_abs": 0.021653929707232733,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_rotation/value": {
+            "rms": 0.00011483498904819503,
+            "max_abs": 0.00027643651137774193,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_rotation/speed": {
+            "rms": 0.011078117427781708,
+            "max_abs": 0.027248602153434803,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_tx/value": {
+            "rms": 1.1940623233187318e-05,
+            "max_abs": 3.992779807371338e-05,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_tx/speed": {
+            "rms": 0.0011791503158504124,
+            "max_abs": 0.003111888222812449,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_ty/value": {
+            "rms": 1.251788887887685e-05,
+            "max_abs": 2.8740542088678822e-05,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_ty/speed": {
+            "rms": 0.0009523122074614896,
+            "max_abs": 0.002641796738857574,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_tz/value": {
+            "rms": 1.5818207746637672e-05,
+            "max_abs": 4.429391819176301e-05,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ground_pelvis/pelvis_tz/speed": {
+            "rms": 0.001116646840247885,
+            "max_abs": 0.0027360922204009708,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_r/hip_flexion_r/value": {
+            "rms": 0.00013645183812228202,
+            "max_abs": 0.0004007648922579321,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_r/hip_flexion_r/speed": {
+            "rms": 0.013561304817408672,
+            "max_abs": 0.036585450621513194,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_r/hip_adduction_r/value": {
+            "rms": 8.686692807304786e-05,
+            "max_abs": 0.0002873431476481253,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_r/hip_adduction_r/speed": {
+            "rms": 0.00772621493183852,
+            "max_abs": 0.020100419247675833,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_r/hip_rotation_r/value": {
+            "rms": 0.00017148517279481142,
+            "max_abs": 0.0005359703425071027,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_r/hip_rotation_r/speed": {
+            "rms": 0.013567162431391687,
+            "max_abs": 0.033229013752016257,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_l/hip_flexion_l/value": {
+            "rms": 0.0001003093900899053,
+            "max_abs": 0.00025959531833247285,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_l/hip_flexion_l/speed": {
+            "rms": 0.010743642918393678,
+            "max_abs": 0.026522005442367602,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_l/hip_adduction_l/value": {
+            "rms": 0.0001264569054606748,
+            "max_abs": 0.0003869332260502817,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_l/hip_adduction_l/speed": {
+            "rms": 0.01224836143923957,
+            "max_abs": 0.030334214358013353,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_l/hip_rotation_l/value": {
+            "rms": 0.0001079674587295187,
+            "max_abs": 0.00027500925607939,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/hip_l/hip_rotation_l/speed": {
+            "rms": 0.010449596769118465,
+            "max_abs": 0.02839695777036977,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/back/lumbar_extension/value": {
+            "rms": 9.529296047467586e-05,
+            "max_abs": 0.00026327764205152926,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/back/lumbar_extension/speed": {
+            "rms": 0.008650490524809698,
+            "max_abs": 0.027960665715932087,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/back/lumbar_bending/value": {
+            "rms": 0.00014517937152299886,
+            "max_abs": 0.0003683142901441637,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/back/lumbar_bending/speed": {
+            "rms": 0.012699984151080323,
+            "max_abs": 0.031429050546883275,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/back/lumbar_rotation/value": {
+            "rms": 0.00012056281460632444,
+            "max_abs": 0.00036857411606075474,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/back/lumbar_rotation/speed": {
+            "rms": 0.009849209025815271,
+            "max_abs": 0.02343209011677011,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/knee_r/knee_angle_r/value": {
+            "rms": 0.00012976582783836074,
+            "max_abs": 0.00034188611091734433,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/knee_r/knee_angle_r/speed": {
+            "rms": 0.007949930455508904,
+            "max_abs": 0.02157957096513563,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/knee_l/knee_angle_l/value": {
+            "rms": 7.370492604329418e-05,
+            "max_abs": 0.00021303511253456704,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/knee_l/knee_angle_l/speed": {
+            "rms": 0.007123150461343081,
+            "max_abs": 0.01828397413035332,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ankle_r/ankle_angle_r/value": {
+            "rms": 3.916220853360205e-05,
+            "max_abs": 7.677623744640344e-05,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ankle_r/ankle_angle_r/speed": {
+            "rms": 0.002145819094387652,
+            "max_abs": 0.006884914143507781,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ankle_l/ankle_angle_l/value": {
+            "rms": 2.5157267783678563e-05,
+            "max_abs": 6.213488402674605e-05,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/ankle_l/ankle_angle_l/speed": {
+            "rms": 0.0023285042063609816,
+            "max_abs": 0.006389974163346357,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/subtalar_r/subtalar_angle_r/value": {
+            "rms": 1.2316354518348915e-10,
+            "max_abs": 3.276940370083747e-10,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/subtalar_r/subtalar_angle_r/speed": {
+            "rms": 7.682996611233529e-09,
+            "max_abs": 2.4018104474567074e-08,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/subtalar_l/subtalar_angle_l/value": {
+            "rms": 1.934526027678309e-11,
+            "max_abs": 5.3358401721345294e-11,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/subtalar_l/subtalar_angle_l/speed": {
+            "rms": 2.743396264466284e-09,
+            "max_abs": 8.340623379950966e-09,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/mtp_r/mtp_angle_r/value": {
+            "rms": 0.0,
+            "max_abs": 0.0,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/mtp_r/mtp_angle_r/speed": {
+            "rms": 0.0,
+            "max_abs": 0.0,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/mtp_l/mtp_angle_l/value": {
+            "rms": 0.0,
+            "max_abs": 0.0,
+            "unit": "native trajectory column units"
+          },
+          "/jointset/mtp_l/mtp_angle_l/speed": {
+            "rms": 0.0,
+            "max_abs": 0.0,
+            "unit": "native trajectory column units"
+          }
+        },
+        "controls": {
+          "/forceset/glut_med1_r": {
+            "rms": 0.01552342773522848,
+            "max_abs": 0.0711158743686429,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med2_r": {
+            "rms": 0.014526974973763573,
+            "max_abs": 0.0515503006178606,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med3_r": {
+            "rms": 0.0609366558421548,
+            "max_abs": 0.2607596111058987,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemlh_r": {
+            "rms": 0.013620398859229152,
+            "max_abs": 0.06687210862581645,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemsh_r": {
+            "rms": 0.06386923518335108,
+            "max_abs": 0.26015527398524113,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/sar_r": {
+            "rms": 0.017128853452838686,
+            "max_abs": 0.0661460901095188,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/add_mag2_r": {
+            "rms": 0.016036777622206073,
+            "max_abs": 0.04607589840251516,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tfl_r": {
+            "rms": 0.01826253081904334,
+            "max_abs": 0.06673985429363383,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/pect_r": {
+            "rms": 0.010061084300056188,
+            "max_abs": 0.03154428325668328,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/grac_r": {
+            "rms": 0.00993790972428922,
+            "max_abs": 0.031918001903143894,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max1_r": {
+            "rms": 0.009721958166532154,
+            "max_abs": 0.035046452071247146,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max2_r": {
+            "rms": 0.01136571058540818,
+            "max_abs": 0.05781882521966153,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max3_r": {
+            "rms": 0.011453628282434312,
+            "max_abs": 0.05320312032784123,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/iliacus_r": {
+            "rms": 0.0852457643652961,
+            "max_abs": 0.4446539852320043,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/psoas_r": {
+            "rms": 0.06033431173542197,
+            "max_abs": 0.22790684932970445,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/quad_fem_r": {
+            "rms": 0.015115214377433434,
+            "max_abs": 0.061078561977600865,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/gem_r": {
+            "rms": 0.00809813188164935,
+            "max_abs": 0.01822906566840536,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/peri_r": {
+            "rms": 0.011511078421311379,
+            "max_abs": 0.0407355074171379,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/rect_fem_r": {
+            "rms": 0.021111782188680414,
+            "max_abs": 0.08829223703191384,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/vas_int_r": {
+            "rms": 0.015676931141428638,
+            "max_abs": 0.08214266368340101,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/med_gas_r": {
+            "rms": 2.6060140724738437e-06,
+            "max_abs": 1.3757771446229472e-05,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/soleus_r": {
+            "rms": 2.315680370632359e-06,
+            "max_abs": 1.22641237304804e-05,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_post_r": {
+            "rms": 2.1333764027698546e-06,
+            "max_abs": 1.1286347478199968e-05,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_ant_r": {
+            "rms": 0.0013139513002298634,
+            "max_abs": 0.003082438659929826,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med1_l": {
+            "rms": 0.07706134504221636,
+            "max_abs": 0.3761110425715817,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med2_l": {
+            "rms": 0.10364715289492869,
+            "max_abs": 0.5492739889879986,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_med3_l": {
+            "rms": 0.055097148619287585,
+            "max_abs": 0.26570953930769436,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemlh_l": {
+            "rms": 0.036284346986686186,
+            "max_abs": 0.17037777915231628,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/bifemsh_l": {
+            "rms": 0.1253756136361565,
+            "max_abs": 0.6719079590640609,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/sar_l": {
+            "rms": 0.008199798761943593,
+            "max_abs": 0.021536293956168184,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/add_mag2_l": {
+            "rms": 0.03302976482754359,
+            "max_abs": 0.1534529889204017,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tfl_l": {
+            "rms": 0.009410259491825782,
+            "max_abs": 0.02723876583026008,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/pect_l": {
+            "rms": 0.019259708164559002,
+            "max_abs": 0.09744430942295385,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/grac_l": {
+            "rms": 0.019858396428745755,
+            "max_abs": 0.09793930303223697,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max1_l": {
+            "rms": 0.010321276434477904,
+            "max_abs": 0.0282649051855242,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max2_l": {
+            "rms": 0.010729019560805467,
+            "max_abs": 0.044483651158644444,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/glut_max3_l": {
+            "rms": 0.02180260067422147,
+            "max_abs": 0.1112334804985879,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/iliacus_l": {
+            "rms": 0.0559704520350645,
+            "max_abs": 0.2673308670705888,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/psoas_l": {
+            "rms": 0.043355737020774054,
+            "max_abs": 0.13328085847474946,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/quad_fem_l": {
+            "rms": 0.03292387791529839,
+            "max_abs": 0.14571029411166497,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/gem_l": {
+            "rms": 0.020120433824309083,
+            "max_abs": 0.106676567466502,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/peri_l": {
+            "rms": 0.011037024796897686,
+            "max_abs": 0.035776942048594905,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/rect_fem_l": {
+            "rms": 0.020211430176466608,
+            "max_abs": 0.10609499043389456,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/vas_int_l": {
+            "rms": 0.026916432152637167,
+            "max_abs": 0.137849836477278,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/med_gas_l": {
+            "rms": 0.030230410201822867,
+            "max_abs": 0.12068808106914874,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/soleus_l": {
+            "rms": 0.0020724411783947226,
+            "max_abs": 0.009112294608153524,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_post_l": {
+            "rms": 0.010383588272973943,
+            "max_abs": 0.03930048515599921,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/tib_ant_l": {
+            "rms": 0.02077942311727261,
+            "max_abs": 0.09129202972127169,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/ercspn_r": {
+            "rms": 0.0607803037580651,
+            "max_abs": 0.13981906583567755,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/ercspn_l": {
+            "rms": 0.061327167985692904,
+            "max_abs": 0.15530163330900423,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/intobl_r": {
+            "rms": 0.12542848792372277,
+            "max_abs": 0.35826320323365796,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/intobl_l": {
+            "rms": 0.06485060001283018,
+            "max_abs": 0.22973870365197452,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/extobl_r": {
+            "rms": 0.033216647340753164,
+            "max_abs": 0.09533999563902447,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/extobl_l": {
+            "rms": 0.055401172474222965,
+            "max_abs": 0.15712686478595062,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/MZ": {
+            "rms": 3.5093110671564025,
+            "max_abs": 9.9440453862194,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/MX": {
+            "rms": 1.8610698559652503,
+            "max_abs": 4.906357097697935,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/MY": {
+            "rms": 1.1227613336050348,
+            "max_abs": 4.7231795679907975,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/FX": {
+            "rms": 9.644876939586588,
+            "max_abs": 30.240089115602018,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/FY": {
+            "rms": 4.192487629012206,
+            "max_abs": 14.370419637376685,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/FZ": {
+            "rms": 6.032054322746522,
+            "max_abs": 19.009549114402347,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_hip_flexion_r": {
+            "rms": 0.02252715249302238,
+            "max_abs": 0.07621757615841958,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_hip_adduction_r": {
+            "rms": 0.026929422540459255,
+            "max_abs": 0.09749048587588649,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_hip_rotation_r": {
+            "rms": 0.013367946762886072,
+            "max_abs": 0.033956265430384006,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_knee_angle_r": {
+            "rms": 0.022394244523746838,
+            "max_abs": 0.058842635073479733,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_ankle_angle_r": {
+            "rms": 0.0022222819039927288,
+            "max_abs": 0.00538553728156721,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_subtalar_angle_r": {
+            "rms": 0.0060092175914240285,
+            "max_abs": 0.016836648156688838,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_mtp_angle_r": {
+            "rms": 0.00012158590631079831,
+            "max_abs": 0.0005116058470839846,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_hip_flexion_l": {
+            "rms": 0.026420658439929082,
+            "max_abs": 0.07644109613954943,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_hip_adduction_l": {
+            "rms": 0.024672734935195947,
+            "max_abs": 0.10087445464143499,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_hip_rotation_l": {
+            "rms": 0.02511778747100553,
+            "max_abs": 0.07773309577188406,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_knee_angle_l": {
+            "rms": 0.027709951715307914,
+            "max_abs": 0.12205767830452022,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_ankle_angle_l": {
+            "rms": 0.005731001417214962,
+            "max_abs": 0.012655984856309727,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_subtalar_angle_l": {
+            "rms": 0.004688105319018459,
+            "max_abs": 0.01584794519463997,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_mtp_angle_l": {
+            "rms": 0.00011662032636305254,
+            "max_abs": 0.00031992814810459513,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_lumbar_extension": {
+            "rms": 0.04729541910160781,
+            "max_abs": 0.11758114448247792,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_lumbar_bending": {
+            "rms": 0.055644795703050864,
+            "max_abs": 0.14297796883844885,
+            "unit": "native trajectory column units"
+          },
+          "/forceset/reserve_lumbar_rotation": {
+            "rms": 0.11134782312487297,
+            "max_abs": 0.3467049905171274,
+            "unit": "native trajectory column units"
+          }
+        },
+        "objective_pass": true,
+        "selected_trajectory_checks_pass": true,
+        "all_state_and_control_columns_assessed": false,
+        "configured_checks_pass": true,
+        "status": "objective_only"
+      }
+    ],
+    "state_rms_limits": {},
+    "control_rms_limits": {},
+    "objective_relative_tolerance": 0.02,
+    "objective_absolute_tolerance": 1e-08,
+    "status": "objective_only",
+    "scope": "Successive native mesh comparisons on shared trajectory times. Caller thresholds are not physiological validation or a mathematical convergence proof.",
+    "report_file": "${SCRATCH}\\human09-results\\mesh-study-1b395c966c7d415f98ee5df11ad9bf3d\\mesh_study.json",
+    "files": [
+      "${SCRATCH}\\human09-results\\mesh-study-1b395c966c7d415f98ee5df11ad9bf3d\\mesh_study.json",
+      "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\solution.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\states.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\controls.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\quality.json",
+      "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\reference_states.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-e822dbe197e24fb38afb19b88d427334\\tool.xml",
+      "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\solution.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\states.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\controls.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\quality.json",
+      "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\reference_states.sto",
+      "${SCRATCH}\\human09-results\\moco_inverse-a92fb7d5322a4650a0c39a669c203347\\tool.xml"
+    ]
+  },
+  "human_moco_scope": "Gait2354, 54 explicitly converted muscles + explicit residual/reserve profile, prescribed coordinates/force plates, 0.4-0.5 s; no full-cycle/physiological validation.",
+  "hosted_github_ci_executed": false,
+  "human_input_data_redistributed": false
+}

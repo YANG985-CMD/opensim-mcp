@@ -3,7 +3,7 @@
   "executed_on": "2026-11-13",
   "platform": "Windows 11 x64",
   "archive": "opensim-mcp-v1.4.1-win11-installer.zip",
-  "sha256": "fa1058930e00b6e0ca6a5632bd5fddfeb39a9955a9ca0fd7c1cc1e8ab7da4657",
+  "sha256": "b81f6332587f5951d7134f6307c4b498060df5b31f97be2960ad8b10777added",
   "source_tests": {
     "passed": 262,
     "failures": 0,
@@ -34,5 +34,13 @@
     "Hardware",
     "Human experimental validation"
   ],
-  "full_source_in_public_archive": false
+  "full_source_in_public_archive": false,
+  "public_source": "https://github.com/YANG985-CMD/opensim-mcp/tree/main/opensim-mcp",
+  "unified_release": {
+    "tag": "suite-2026.11.13",
+    "executed_on": "2026-11-13",
+    "runtime_payload_identical_to_previously_tested_package": true,
+    "source_regression_after_layout": 262,
+    "packaging_changes": "Open source documentation and license disclosure, plus regenerated manifests."
+  }
 }

@@ -1,0 +1,28 @@
+{
+  "version": "0.5.3",
+  "executed_on": "2026-11-13",
+  "platform": "Windows 11 x64",
+  "archive": "solidworks-mcp-v0.5.3-win11-installer.zip",
+  "sha256": "a45f7e67ed5bf8f2ff06176c5fd109bcb83e1f4f41b14b49b01888ad9d18beb0",
+  "source_tests": {
+    "passed": 91,
+    "failures": 0,
+    "errors": 0
+  },
+  "tool_count": 53,
+  "compiled_modules_match_current_source": 27,
+  "archive_manifest_files_verified": 67,
+  "fresh_directory_install": true,
+  "offline_dependency_wheels": 31,
+  "mcp_status": "MCP_READY",
+  "native_typelib_major_version": 33,
+  "target_solidworks": "2025",
+  "python": "CPython 3.12 x64",
+  "scope": "Offline share-package installation and real stdio initialize/list_tools/sw_health, with SOLIDWORKS 2025 type library on the current Windows 11 PC.",
+  "not_executed_this_release": [
+    "CAD document edits",
+    "Clean Windows 11 VM",
+    "Other SOLIDWORKS releases"
+  ],
+  "core_source_in_public_archive": false
+}

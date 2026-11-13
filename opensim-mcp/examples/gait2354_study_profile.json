@@ -1,0 +1,237 @@
+{
+  "scope": "Explicit example-specific settings for the separately installed official Gait2354 reference; not an automatic actuator/force-frame guess.",
+  "actuator_profile": [
+    {
+      "name": "MZ",
+      "coordinate": "pelvis_tilt",
+      "role": "residual",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "MX",
+      "coordinate": "pelvis_list",
+      "role": "residual",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "MY",
+      "coordinate": "pelvis_rotation",
+      "role": "residual",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "FX",
+      "coordinate": "pelvis_tx",
+      "role": "residual",
+      "unit": "N",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "FY",
+      "coordinate": "pelvis_ty",
+      "role": "residual",
+      "unit": "N",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "FZ",
+      "coordinate": "pelvis_tz",
+      "role": "residual",
+      "unit": "N",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_hip_flexion_r",
+      "coordinate": "hip_flexion_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_hip_adduction_r",
+      "coordinate": "hip_adduction_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_hip_rotation_r",
+      "coordinate": "hip_rotation_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_knee_angle_r",
+      "coordinate": "knee_angle_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_ankle_angle_r",
+      "coordinate": "ankle_angle_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_subtalar_angle_r",
+      "coordinate": "subtalar_angle_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_mtp_angle_r",
+      "coordinate": "mtp_angle_r",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_hip_flexion_l",
+      "coordinate": "hip_flexion_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_hip_adduction_l",
+      "coordinate": "hip_adduction_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_hip_rotation_l",
+      "coordinate": "hip_rotation_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_knee_angle_l",
+      "coordinate": "knee_angle_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_ankle_angle_l",
+      "coordinate": "ankle_angle_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_subtalar_angle_l",
+      "coordinate": "subtalar_angle_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_mtp_angle_l",
+      "coordinate": "mtp_angle_l",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_lumbar_extension",
+      "coordinate": "lumbar_extension",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_lumbar_bending",
+      "coordinate": "lumbar_bending",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    },
+    {
+      "name": "reserve_lumbar_rotation",
+      "coordinate": "lumbar_rotation",
+      "role": "reserve",
+      "unit": "Nm",
+      "optimal_force": 1.0,
+      "min_control": -10000.0,
+      "max_control": 10000.0
+    }
+  ],
+  "external_forces": [
+    {
+      "name": "right",
+      "applied_to_body": "calcn_r",
+      "force_identifier": "ground_force_v",
+      "point_identifier": "ground_force_p",
+      "torque_identifier": "ground_torque_",
+      "force_expressed_in_body": "ground",
+      "point_expressed_in_body": "ground"
+    },
+    {
+      "name": "left",
+      "applied_to_body": "calcn_l",
+      "force_identifier": "1_ground_force_v",
+      "point_identifier": "1_ground_force_p",
+      "torque_identifier": "1_ground_torque_",
+      "force_expressed_in_body": "ground",
+      "point_expressed_in_body": "ground"
+    }
+  ],
+  "quality_limits": {
+    "max_reserve_peak_fraction": 0.1,
+    "max_residual_actuator_force_N": 20.0,
+    "max_residual_actuator_moment_Nm": 75.0
+  }
+}

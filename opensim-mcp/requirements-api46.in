@@ -1,0 +1,3 @@
+# Verified on Windows 11, CPython 3.12 x64.
+opensim==4.6
+numpy==2.5.4

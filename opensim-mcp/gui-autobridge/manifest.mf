@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.opensim.mcp.autobridge
+OpenIDE-Module-Specification-Version: 0.3
+OpenIDE-Module-Name: OpenSim MCP Automatic GUI Bridge
+OpenIDE-Module-Public-Packages: -
+OpenIDE-Module-Install: org/opensim/mcp/autobridge/BridgeInstaller.class
+OpenIDE-Module-Module-Dependencies: org.openide.modules,
+ org.openide.windows, org.opensim.console
+OpenIDE-Module-Java-Dependencies: Java > 1.8
+

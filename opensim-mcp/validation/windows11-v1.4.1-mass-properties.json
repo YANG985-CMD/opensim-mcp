@@ -1,0 +1,199 @@
+{
+  "date": "2026-11-01",
+  "version": "1.4.1",
+  "base_commit": "2790f904b384209f4e18f03a544eee7d2becbc99",
+  "tool_count": 94,
+  "source_tests": {
+    "passed": 262,
+    "failures": 0,
+    "errors": 0,
+    "initial_restricted_run": "260 passed; two Windows process/stdout environmental failures; native Windows rerun passed all 262"
+  },
+  "native_stdio": {
+    "passed": true,
+    "version": "1.4.1",
+    "tools": 94,
+    "scripting_enabled": false,
+    "converted": {
+      "status": "completed",
+      "body_parameters": {
+        "mass_kg": 2.0,
+        "mass_center_m": [
+          0.08145538270574129,
+          -0.18612644986844226,
+          0.07938744249091156
+        ],
+        "inertia_kg_m2": [
+          0.03336133303418107,
+          0.03333833839482135,
+          0.029966995237664256,
+          1.1838083645114832e-05,
+          0.009076593078430457,
+          0.003837522002806134
+        ]
+      },
+      "target_frame": "analytic device body",
+      "inertia_reference": "center_of_mass",
+      "inertia_convention": "tensor_entries",
+      "inertia_matrix_kg_m2": [
+        [
+          0.03336133303418107,
+          1.1838083645114832e-05,
+          0.009076593078430457
+        ],
+        [
+          1.1838083645114832e-05,
+          0.03333833839482135,
+          0.003837522002806134
+        ],
+        [
+          0.009076593078430456,
+          0.0038375220028061315,
+          0.029966995237664256
+        ]
+      ],
+      "quality": {
+        "principal_moments_kg_m2": [
+          0.02166666666666667,
+          0.03333333333333334,
+          0.04166666666666666
+        ],
+        "triangle_margin_kg_m2": 0.01333333333333335,
+        "tolerance_kg_m2": 4.166666666666666e-12,
+        "relative_tolerance": 1e-10,
+        "input_symmetry_error": 2.6020852139652106e-18,
+        "near_degenerate_mass_distribution": false,
+        "positive_definite": true,
+        "triangle_inequality_within_tolerance": true,
+        "principal_moment_invariance_error_kg_m2": 6.938893903907228e-18,
+        "rotation_determinant": 1.0,
+        "rotation_orthogonality_error": 6.938893903907228e-17
+      },
+      "conversion": {
+        "mass_factor_to_kg": 0.001,
+        "length_factor_to_m": 0.001,
+        "inertia_factor_to_kg_m2": 1e-06,
+        "parallel_axis_subtracted": true,
+        "off_diagonal_sign_changed": true,
+        "input_symmetry_error_in_source_units": 0.0,
+        "point_mapping": "p_target_m = rotation_source_to_target * p_source_m + translation_source_origin_in_target_m"
+      },
+      "provenance": {
+        "source_description": "Uniform analytic 2 kg brick, 0.2 x 0.3 x 0.4 m; not real hardware",
+        "source_frame": "analytic brick CAD frame",
+        "source_properties": {
+          "mass": 2000.0,
+          "mass_unit": "g",
+          "center_of_mass": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "length_unit": "mm",
+          "inertia": [
+            44266.666666666664,
+            400.0,
+            600.0,
+            400.0,
+            35333.33333333334,
+            1200.0,
+            600.0,
+            1200.0,
+            22666.666666666668
+          ],
+          "inertia_unit": "kg_mm2",
+          "inertia_reference": "source_origin",
+          "inertia_convention": "positive_products",
+          "source_frame": "analytic brick CAD frame",
+          "source_description": "Uniform analytic 2 kg brick, 0.2 x 0.3 x 0.4 m; not real hardware"
+        },
+        "frame_transform": {
+          "target_frame": "analytic device body",
+          "rotation_source_to_target": [
+            [
+              0.7044663052755917,
+              -0.3894183423086505,
+              -0.5933637833613874
+            ],
+            [
+              0.2978435767000479,
+              0.9210609940028851,
+              -0.2508701838500143
+            ],
+            [
+              0.644217687237691,
+              0.0,
+              0.7648421872844885
+            ]
+          ],
+          "translation_source_origin_in_target_m": [
+            0.1,
+            -0.2,
+            0.05
+          ]
+        }
+      },
+      "warnings": [
+        "Transform mesh vertices and child joint points/axes into this same target body frame before assembly. This tool does not edit meshes or infer model attachment transforms."
+      ],
+      "scope": "Numerical units, central-reference, tensor convention and proper-frame conversion only. No material/mass truth, mesh agreement, anatomical alignment, joint mapping, assistance, energy, model mutation or native simulation is certified."
+    },
+    "native_reopened": {
+      "name": "analytic_device",
+      "mass_kg": 2.0,
+      "mass_center_m": [
+        0.08145538270574129,
+        -0.18612644986844226,
+        0.07938744249091156
+      ],
+      "inertia_kg_m2": [
+        0.03336133303418107,
+        0.03333833839482135,
+        0.029966995237664256,
+        1.1838083645114832e-05,
+        0.009076593078430457,
+        0.003837522002806134
+      ]
+    },
+    "added_mass_id_force_N": 2.0,
+    "expected_added_force_N": 2.0,
+    "invalid_inertia_rejected": true,
+    "native_energy": {
+      "native_kinetic_energy_J": 0.02731065779119444,
+      "analytic_kinetic_energy_J": 0.027310657791194442,
+      "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026"
+    },
+    "original_fixture_only": true,
+    "scope": "Numeric conversion, native stored mass/COM/inertia, analytic slider ID and non-principal rotational kinetic energy. Illustrative mesh; no device/anatomy/contact/assistance/metabolic validation."
+  },
+  "source_hashes": {
+    "src/opensim_mcp/mass_properties.py": "b01dc766359eb25ead786f671cee2836ba536ebbe99c4e1b42094f117a5e880f",
+    "src/opensim_mcp/wearable.py": "f6aa7be77d1b4c2d1cd0935b0d63c17e80d14249671dda8ff87b3d4d509d884d",
+    "src/opensim_mcp/native_wearable.py": "99d0cdfa5bbd0746651b37ff56a6a98c6499ad0fe1cb704b276fb5484d033a08",
+    "src/opensim_mcp/v11_tools.py": "8430e3c727ff76873cefbd08a8452c6c5d0646037fa575857c359d62559567a3",
+    "src/opensim_mcp/__init__.py": "bdd00c8950668511925940f462edfa697a21a1923bcf8e9ef5da994a17fc30b9",
+    "pyproject.toml": "812c250b55cbcba21fb81e67682e04afd7ed03ddd16427c21294fa6341ce2801",
+    "tests/test_mass_properties.py": "bf7a8fddae2eb6f96e86f755032e0ca2747479ca56ca66eebcbeaaea34494526",
+    "scripts/smoke_mass_properties.py": "7256d1acd29124765a36c77490f4cabe8e25ecade9f1a3af66a6eb519d9bf1ff",
+    "docs/MASS_PROPERTIES.zh-CN.md": "af30e5b4be97851f52d19b61e4a1488261ce9af65743c177d02eed950d35e253",
+    "docs/TOOLS.md": "c2ef22a5484f942bb17715581ef1a55270a8c00645695aaf25f0af512bb344e4",
+    "docs/V11_WORKFLOWS.zh-CN.md": "afa2c8c14dc21ca2fbe89f2a85ee2bcfa9b68a917403ee4d50f02a452523d867",
+    "README.md": "db9d18dca245ec3ad03f21302005478d05f058ea4feada9f4b413bb4c6fc0069",
+    "README.zh-CN.md": "cad04529c81a78b6f3f5cc2090f360162eefe9678859b915417d098414bc8ade",
+    "CHANGELOG.md": "3072b0bc330a809bf6d6a766a87fd93404b98b45e4dffce93422ecbd97b182ed",
+    "VERIFIED.md": "7dcbc3c7dbcc8e08813cde94be3ae22dd30314ceaba33f0226dd391214bee180"
+  },
+  "public_release_unchanged": "v1.4.0; no installer, push, tag or release operation",
+  "scope": "Local private-source mass-property conversion and wearable ingestion checks only. No user model/config/session edit; no mesh/joint conversion, CAD calibration, contact, active assistance or metabolic claim.",
+  "installed_verification": {
+    "version": "1.4.1",
+    "metadata_version": "1.4.1",
+    "tool_count": 94,
+    "read_only_tool_verified": true,
+    "source_hashes_match_validated_candidate": true,
+    "fresh_stdio_conversion_matches_native_smoke": true,
+    "scripting_disabled_in_test": true,
+    "daily_user_config_session_unchanged": true,
+    "source_root": "E:\\simulink\\mcp_servers\\opensim-mcp"
+  }
+}

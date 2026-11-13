@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "adapter_version": "1.2.0",
+  "muscle_count": 54,
+  "frame_count": 30,
+  "mesh_count": 21,
+  "time_range_s": [
+    0.75,
+    1.2333333333333334
+  ],
+  "source": "Official OpenSim Gait2354 adjusted model and provided RRA reference kinematics; explicitly resampled to 60 Hz without filtering or extrapolation.",
+  "added_device_mass_kg": 0.5999999999999943,
+  "assembly_quality": {
+    "native_initialized_and_assembled": true,
+    "original_mass_kg": 72.59999999999998,
+    "combined_mass_kg": 73.19999999999997,
+    "added_device_mass_kg": 0.5999999999999943,
+    "mass_balance_error_kg": 0.0,
+    "body_count": 14,
+    "coordinate_count": 23,
+    "constraint_count": 0
+  },
+  "quality_status": "needs_review",
+  "baseline_failed_checks": [
+    "reserve_mtp_angle_r",
+    "reserve_subtalar_angle_l",
+    "reserve_mtp_angle_l"
+  ],
+  "wearable_failed_checks": [
+    "reserve_mtp_angle_r",
+    "reserve_subtalar_angle_l",
+    "reserve_mtp_angle_l"
+  ],
+  "unit_tests": {
+    "passed": 192,
+    "failed": 0
+  },
+  "analytic_native": {
+    "passed": true,
+    "balance_checks": [
+      {
+        "expected_N": 20.0,
+        "max_balance_error_N": 0.0
+      },
+      {
+        "expected_N": 26.0,
+        "max_balance_error_N": 0.0
+      }
+    ],
+    "analytic_volume_cm3": 200
+  },
+  "browser_validation": {
+    "muscles": 54,
+    "frames": 30,
+    "quality": "质量检查：需复核（6 项）",
+    "incorrectPass": false,
+    "displayValuesMatchNativeSamples": true,
+    "colorModesDistinct": true,
+    "musclePickingPassed": true,
+    "csvRows": 30,
+    "playbackFrame": 14,
+    "javascriptExceptions": 0
+  },
+  "rejected_experiments": [
+    "Raw marker IK full-cycle SO reported native optimizer failure; no failed-frame forces were published.",
+    "New trial RRA had large tracking errors and was not used. Final illustration uses the separately supplied official reference segment, not a claimed complete cycle."
+  ],
+  "volume_scope": "Model parameter estimate with explicit 300000 Pa specific tension, not measured subject anatomy.",
+  "force_scope": "Same prescribed motion, measured/modeled external loads, muscle parameters and SO settings; verified welded device masses only. Differences do not establish active assistance, altered gait, clinical benefit or measured force reduction.",
+  "browser_compatibility": {
+    "no_force_results": "passed",
+    "zero_muscles": "passed",
+    "javascript_exceptions": 0
+  },
+  "mcp_validation": {
+    "version": "1.2.0",
+    "tool_count": 90,
+    "scripts_enabled": false,
+    "new_tools_called": 3,
+    "async_force_study_cancelled": true
+  }
+}

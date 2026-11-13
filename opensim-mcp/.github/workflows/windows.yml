@@ -1,0 +1,86 @@
+name: Windows checks and release
+on:
+  push:
+    branches: ['**']
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: pwsh
+jobs:
+  windows:
+    runs-on: windows-2025
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      # install.ps1 provisions its pinned CPython via uv; no setup-python cache is required.
+      - name: One-click installer (no GUI or Codex user config)
+        run: |
+          $scratch = Join-Path $env:RUNNER_TEMP 'opensim-mcp'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/install.ps1 -TempRoot $scratch -WithTests -SkipCodexRegistration -AllowWindowsServer
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Adapter, native, portability and cancellation regressions
+        run: |
+          $scratch = Join-Path $env:RUNNER_TEMP 'opensim-mcp'
+          . ./scripts/env.ps1 -TempRoot (Join-Path $scratch 'tests') -ResultsRoot (Join-Path $scratch 'results') -EnableScripts
+          $py = Join-Path $PWD '.venv/Scripts/python.exe'
+          & $py -B -m pytest --basetemp (Join-Path $scratch 'pytest') --junitxml (Join-Path $scratch 'pytest.xml')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($name in @('smoke_profiles','smoke_tracking','smoke_projects','regression_projects','smoke_v08','smoke_v09','smoke_studies','smoke_recovery','smoke_topology','smoke_viewer','smoke_v10','smoke_v11','smoke_wearable','smoke_lower_limb_wearable','smoke_v13','smoke_v14')) {
+            & $py -B (Join-Path $PWD "scripts/$name.py") --report (Join-Path $scratch "$name.json")
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          & $py -B ./scripts/smoke_v04.py --examples (Join-Path $PWD 'examples') --report (Join-Path $scratch 'prior-native.json')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Validate version and source package
+        run: |
+          $py = Join-Path $PWD '.venv/Scripts/python.exe'
+          $env:PYTHONDONTWRITEBYTECODE = '1'
+          $version = & $py -B -c 'from opensim_mcp import __version__; print(__version__)'
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and $env:GITHUB_REF_NAME -ne "v$version") { throw 'Tag does not match source version.' }
+          & $py -B ./scripts/package_source.py --output (Join-Path $env:RUNNER_TEMP 'release')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Upload release ZIP and checksum
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: windows-release
+          path: ${{ runner.temp }}/release/*
+          if-no-files-found: error
+      - name: Upload executed test evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: windows-test-evidence
+          path: |
+            ${{ runner.temp }}/opensim-mcp/*.json
+            ${{ runner.temp }}/opensim-mcp/pytest.xml
+          if-no-files-found: warn
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: windows
+    runs-on: windows-2025
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Publish the already-tested package
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          $destination = Join-Path $env:RUNNER_TEMP 'release'
+          gh run download $env:GITHUB_RUN_ID --repo $env:REPO --name windows-release --dir $destination
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $files = @(Get-ChildItem -LiteralPath $destination -File | Select-Object -ExpandProperty FullName)
+          gh release create $env:TAG @files --repo $env:REPO --verify-tag --generate-notes --title "OpenSim MCP $env:TAG (Windows 11)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

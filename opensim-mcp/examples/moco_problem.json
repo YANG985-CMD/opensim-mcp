@@ -1,0 +1,13 @@
+{
+  "initial_time": 0,
+  "final_time": 1,
+  "state_bounds": {
+    "/jointset/slider/slider_tx/value": {"bounds": [-2, 2], "initial": [0], "final": [1]},
+    "/jointset/slider/slider_tx/speed": {"bounds": [-5, 5], "initial": [0], "final": [0]}
+  },
+  "control_bounds": {"/forceset/actuator": [-50, 50]},
+  "mesh_intervals": 10,
+  "refine_mesh": true,
+  "convergence_tolerance": 0.000001,
+  "constraint_tolerance": 0.000001
+}

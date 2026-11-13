@@ -1,0 +1,36 @@
+{
+  "version": "0.5.3",
+  "executed_on": "2026-11-13",
+  "platform": "Windows 11 x64",
+  "archive": "solidworks-mcp-v0.5.3-win11-installer.zip",
+  "sha256": "ba04e40a0f2af3fea261db07acdc49a1ff3bff3e999c0ba33cc20c00102eaab9",
+  "source_tests": {
+    "passed": 91,
+    "failures": 0,
+    "errors": 0
+  },
+  "tool_count": 53,
+  "compiled_modules_match_current_source": 27,
+  "archive_manifest_files_verified": 68,
+  "fresh_directory_install": true,
+  "offline_dependency_wheels": 31,
+  "mcp_status": "MCP_READY",
+  "native_typelib_major_version": 33,
+  "target_solidworks": "2025",
+  "python": "CPython 3.12 x64",
+  "scope": "Offline share-package installation and real stdio initialize/list_tools/sw_health, with SOLIDWORKS 2025 type library on the current Windows 11 PC.",
+  "not_executed_this_release": [
+    "CAD document edits",
+    "Clean Windows 11 VM",
+    "Other SOLIDWORKS releases"
+  ],
+  "core_source_in_public_archive": false,
+  "public_source": "https://github.com/YANG985-CMD/opensim-mcp/tree/main/solidworks-mcp",
+  "unified_release": {
+    "tag": "suite-2026.11.13",
+    "executed_on": "2026-11-13",
+    "runtime_payload_identical_to_previously_tested_package": true,
+    "source_regression_after_layout": 91,
+    "packaging_changes": "Open source documentation and license disclosure, plus regenerated manifests."
+  }
+}

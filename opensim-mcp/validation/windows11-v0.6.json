@@ -1,0 +1,37 @@
+{
+  "version": "0.6.0",
+  "adapter_tests_passed": 103,
+  "tool_count": 55,
+  "native_profiles": {
+    "placement": {
+      "max_marker_shift_m": 0.09999999999999998,
+      "marker_shifts_m": {
+        "M1": 0.0,
+        "M2": 0.09999999999999998,
+        "M3": 0.0
+      },
+      "protected_markers_unchanged": true,
+      "native_reopened": true
+    },
+    "movement_limit_rejected": true,
+    "duplicate_rejected": true,
+    "wrong_unit_rejected": true,
+    "usage": {
+      "actuators": {
+        "reserve_tx": {
+          "role": "reserve",
+          "unit": "N",
+          "rms": 0.00199962,
+          "peak_abs": 0.00199962,
+          "rms_fraction_reference": 9.9981e-05
+        }
+      },
+      "max_rms_fraction_reference": 9.9981e-05,
+      "rows": 11
+    },
+    "passed": true
+  },
+  "prior_evidence": "windows11-v0.5.json",
+  "gui_changed": false,
+  "human_marker_placement_tested": false
+}

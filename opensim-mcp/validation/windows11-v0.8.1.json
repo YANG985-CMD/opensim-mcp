@@ -1,0 +1,15 @@
+{
+  "version": "0.8.1",
+  "adapter_tests_passed": 139,
+  "native_lifecycle": {
+    "passed": true,
+    "old_version": "0.8.0",
+    "new_version": "0.8.1",
+    "old_and_new_native_smoke": true,
+    "shared_roots_and_scripting_preserved": true,
+    "rollback_preserves_other_servers": true,
+    "actual_user_codex_configuration_changed": false
+  },
+  "hosted_github_ci_executed": false,
+  "clean_windows_os_vm_tested": false
+}

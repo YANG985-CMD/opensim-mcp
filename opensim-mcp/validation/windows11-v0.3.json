@@ -1,0 +1,94 @@
+{
+  "record_type": "Sanitized summary of executed local checks; not hosted CI",
+  "date": "2026-10-28",
+  "project_version": "0.3.0",
+  "os": "Windows 11 x64 10.0.26200",
+  "server_python": "3.12.13",
+  "mcp_sdk": "1.29.1",
+  "adapter_tests": {
+    "passed": 54,
+    "failed": 0,
+    "test_command": "python -B -m pytest --basetemp <dedicated-scratch>/pytest"
+  },
+  "api46": {
+    "version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "tool_count": 22,
+    "native_stdio_passed": true,
+    "session_and_scripts": {
+      "persistent_variable": 42,
+      "edited_mass_kg": 2.5,
+      "invalid_edit_rejected": true,
+      "script_output_and_exception_captured": true,
+      "timeout_restarts_empty_session": true
+    },
+    "analytic_ik": {
+      "max_absolute_coordinate_error_m": 1.3877787807814457e-17,
+      "tolerance_m": 1e-06,
+      "expected_rows": 11,
+      "passed": true
+    },
+    "analyses": {
+      "run_inverse_dynamics_unassisted": 20,
+      "run_inverse_dynamics_assisted": 15,
+      "run_static_optimization_unassisted": 20,
+      "run_static_optimization_assisted": 15,
+      "muscle_path_length_m": 1,
+      "muscle_moment_arm_translation": 1
+    }
+  },
+  "gui": {
+    "package_tag": "4.6_beta",
+    "version": "version 4.5.2-2026-02-17-1df1a24, build date 03:20:32 Feb 20 2026",
+    "integration": {
+      "connected": true,
+      "roundtrip_mass_kg": 3,
+      "roundtrip_pose_m": 0.03,
+      "stale_write_rejected": true,
+      "sync_mode": "new_active_model_version"
+    },
+    "restart_auto_attached": true,
+    "restart_used_different_process": true,
+    "manual_bootstrap_run": false,
+    "launcher_helper_auto_attached": true,
+    "source_model_unchanged": true
+  },
+  "legacy43": {
+    "version": "version 4.3-2021-08-27-4bc7ad9, build date 02:30:27 Aug 28 2021",
+    "python": "3.8.20",
+    "backend": "cli",
+    "native_stdio_passed": true,
+    "gui_tested_in_this_run": false,
+    "analyses": {
+      "run_inverse_dynamics_unassisted": 20,
+      "run_inverse_dynamics_assisted": 15,
+      "run_static_optimization_unassisted": 20,
+      "run_static_optimization_assisted": 15,
+      "muscle_path_length_m": 1,
+      "muscle_moment_arm_translation": 1
+    }
+  },
+  "actual_codex_configuration_probe": {
+    "passed": true,
+    "tools": 22,
+    "actual_codex_config_used": true,
+    "backend": "api",
+    "api_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+    "gui_version": "version 4.5.2-2026-02-17-1df1a24, build date 03:20:32 Feb 20 2026",
+    "gui_connected": true,
+    "plugin_installed": true,
+    "manual_bootstrap_run": false,
+    "gui_model_loaded": false
+  },
+  "not_validated": [
+    "real participant studies",
+    "physiological conclusions",
+    "final 4.6 GUI installer",
+    "Moco",
+    "ScaleTool",
+    "JointReaction",
+    "hosted CI",
+    "remote GitHub publication"
+  ]
+}

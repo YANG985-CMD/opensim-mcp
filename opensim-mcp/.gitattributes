@@ -1,0 +1,5 @@
+* text=auto
+*.py text eol=lf
+*.trc text eol=lf
+*.osim text eol=lf
+*.ps1 text eol=crlf

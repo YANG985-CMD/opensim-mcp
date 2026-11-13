@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+outputs/
+
+bridge-settings.json
+mcp-codex.toml
+mcp-harness.json
+.env
+.env.*

@@ -1,80 +1,82 @@
-# OpenSim MCP for Windows 11
+# OpenSim & SolidWorks MCP
 
-Windows 11 x64 上供 Codex 使用的独立 OpenSim MCP，注册名 **opensim_mcp**。
-当前版本 **v1.4.1**，**94 个工具**。这是独立项目，不是 OpenSim/MathWorks/OpenAI 官方产品。
+**在 Windows 11 上，把 CAD 设计、人体分析和 MATLAB 数据处理连起来。**
 
-支持模型检查和编辑、IK/ID/肌肉分析、缩放、关节反力、RRA/Moco、异步任务与保存点、
-GUI 自动桥接、离线三维动画，以及通用 MATLAB/CAD 数据交换。上肢与下肢共用接口。
-本仓库仅提供发行包和用户说明，完整源码另存于维护者私有仓库。
+[配置主页](https://yang985-cmd.github.io/opensim-mcp/) ·
+[下载安装包](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) ·
+[三个 MCP 配置指南](docs/SETUP_WINDOWS11.zh-CN.md) ·
+[联动功能](docs/INTEROP.zh-CN.md)
 
-## 安装
+本仓库公开两套 MCP 的完整源码和安装包，按 MIT 许可发布。
+MATLAB 使用 MathWorks 官方 MCP，通过下方官方入口安装。
 
-1. 从 [Releases](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) 下载
-   `opensim-mcp-v1.4.1-win11-installer.zip` 和对应 `.sha256`。
-2. 用 PowerShell 的 `Get-FileHash <ZIP路径> -Algorithm SHA256` 对照校验和。
-3. 解压到最终目录，例如 `E:\opensim-mcp`，双击 **install.cmd**。
-4. 等待安装、自检和 Codex 配置完成，然后重启 Codex。
+## 先选你要做的事
 
-首次安装需联网；无需预装 Python。安装器下载并校验依赖，在项目内创建两套独立环境。
-默认关闭任意脚本执行，合并本服务配置并保存原配置备份。安装路径可含空格或中文。
-OpenSim GUI 可选，需要用户另行安装；本包不捆绑或升级 GUI。
+| MCP | 能帮你做什么 | 版本与获取 |
+| --- | --- | --- |
+| **SolidWorks MCP** | 建模、改尺寸、装配配合、检查干涉与间隙、读取质量参数、导出、版本对比和 HTML 报告 | v0.5.3，53 工具 · [源码](solidworks-mcp/) · [安装包](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) |
+| **OpenSim MCP** | 人体模型检查与编辑、IK/ID、肌肉与关节反力、Moco、装置穿戴、三维动画及曲线工作台 | v1.4.1，94 工具 · [源码](opensim-mcp/) · [安装包](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) |
+| **官方 MATLAB MCP** | 执行 MATLAB、检查代码、处理数据和复核结果；配合官方工具包接入 Simulink 与 Skills | [官方 MCP](https://github.com/matlab/matlab-mcp-server) · [官方安装器](https://github.com/matlab/agentic-toolkit-installer) |
 
-指定已有 GUI 与 E 盘临时目录：
+两套本地适配器是独立项目。MATLAB、SOLIDWORKS 及 OpenSim 本体按各自许可安装。
 
-```powershell
-Set-Location 'E:\opensim-mcp'
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1 `
-  -TempRoot 'E:\simulink\_codex_tmp\opensim-mcp-runtime' -OpenSimRoot 'E:\OpenSim 4.6'
+## 三步开始
+
+1. 准备 Windows 11 x64、SOLIDWORKS 2025、64 位 Python 3.12 和可用的 MATLAB。OpenSim API 由安装器准备，GUI 可选。
+2. 在同一个 [Releases 页面](https://github.com/YANG985-CMD/opensim-mcp/releases/latest) 获取两个安装包及 `.sha256`，核对后安装。MATLAB MCP 用 [官方安装器](https://github.com/matlab/agentic-toolkit-installer) 配置。
+3. 按 [详细指南](docs/SETUP_WINDOWS11.zh-CN.md) 合并三个服务到 Codex，或在 [配置主页](https://yang985-cmd.github.io/opensim-mcp/#configure) 填写本机路径并下载配置片段。
+
+| 安装包 | 使用方式 |
+| --- | --- |
+| `opensim-mcp-v1.4.1-win11-installer.zip` | 解压后进入内层 `opensim-mcp`，运行 `install.cmd`，或按指南指定 E 盘运行目录 |
+| `solidworks-mcp-v0.5.3-win11-installer.zip` | 解压到最终目录，运行 `install.ps1`，根据生成的 `mcp-codex.toml` 注册 |
+
+网站生成的是配置文件片段，安装与自检在使用者自己的 Windows 电脑上完成。
+安装后的服务注册名依次为 `opensim_mcp`、`solidworks-mcp` 和 `matlab`。
+
+## 怎样联动
+
+```mermaid
+flowchart LR
+    A[同一个 AI 客户端] <--> S[SolidWorks MCP]
+    A <--> O[OpenSim MCP]
+    A <--> M[官方 MATLAB MCP]
+    S -->|网格和质量参数| O
+    M -->|动作和载荷| O
+    O -->|运动与受力结果| M
+    O --> H[HTML 三维结果]
+    M -->|带单位曲线| H
 ```
 
-省略 `-OpenSimRoot` 则使用独立 API。加 `-SkipCodexRegistration` 仅生成配置供手动合并。
-双击 **doctor.cmd** 自检；关闭 Codex 后运行 `doctor.cmd -Repair` 可修复锁定依赖。
-同一目录先完成一次联网安装和缓存后，修复可加 `-Offline`。不要移动已安装的虚拟环境。
+- **CAD 穿到人体上**。从 SolidWorks 导出装置网格与质量、质心、惯量，明确单位、坐标和关节映射后挂载到 OpenSim。上肢、下肢共用接口。
+- **比较两版方案**。保持人体、动作与外载荷一致，比较更换结构后的受力与力矩，再由 MATLAB 复核差值和机械功。
+- **曲线与三维动作一起看**。HTML 使用共同时间轴，点选曲线查看对应姿态和组件，也可保存查看状态、导出结果。
 
-手动启动命令（标准输入输出 MCP，需要客户端连接）：
+联动采用明确的离线文件交换。完整流程、输入约定和算例范围见 [联动说明](docs/INTEROP.zh-CN.md)。
 
-```powershell
-. .\scripts\env.ps1 -TempRoot 'E:\simulink\_codex_tmp\opensim-mcp-runtime'
-.\.venv\Scripts\python.exe -B -m opensim_mcp.server
+## MATLAB 与 Simulink 官方入口
+
+- [MATLAB MCP Server](https://github.com/matlab/matlab-mcp-server)
+- [Agentic Toolkit Installer](https://github.com/matlab/agentic-toolkit-installer)
+- [MATLAB Agentic Toolkit](https://github.com/matlab/matlab-agentic-toolkit)
+- [Simulink Agentic Toolkit](https://github.com/matlab/simulink-agentic-toolkit)
+
+官方 MCP 的旧地址 `matlab/matlab-mcp-core-server` 已跳转到上面的新地址。
+这里提供官方链接和配置说明，具体官方版本、许可证与要求以其发布页面为准。
+
+## 源码与验证
+
+```text
+opensim-mcp/       OpenSim 服务、安装器、示例、测试与 GUI 桥接
+solidworks-mcp/    SolidWorks 服务、安装集成、测试与许可声明
+config/           三个 MCP 的 Codex 配置示例
+docs/             配置网页、安装指南、联动说明及发布核验
 ```
 
-## v1.4.1 质量参数换算
+2026-11-13 已在本机 Windows 11 验证 OpenSim 262 项、SolidWorks 91 项现有回归，
+以及安装包的真实 MCP 连接。详情见 [OpenSim 发布记录](docs/RELEASE-v1.4.1.json)
+和 [SolidWorks 发布记录](docs/RELEASE-v0.5.3.json)。各记录明确执行平台和验证范围。
 
-新增质量、质心和惯量的单位、参考点及坐标架换算，供 CAD 装置刚体参数导入。
-支持平行轴变换、惯性积符号约定、旋转矩阵与惯量物理约束检查。
-用法见 [质量参数说明](docs/MASS_PROPERTIES.zh-CN.md)。
-
-## v1.4 通用可视化工作台
-
-新增单/双场景工作台：同步时间轴与视角、点击组件联动高亮、距离/三点夹角、
-坐标/外部信号/肌肉力与激活曲线对比，以及查看状态保存/恢复。
-常用操作保持简洁，测量与显示设置按需展开。详见 [工作台说明](docs/WORKBENCH.zh-CN.md)。
-
-## v1.3 通用可视化
-
-三维姿态和外部曲线共用时间轴，点击曲线定位姿态，支持组件绑定、原始采样 CSV 和选择
-上下文导出。MATLAB 导出帮助函数位于 `integrations/matlab`，要求 R2023b+。
-SolidWorks 通过 STL/OBJ 网格接入，必须明确单位、父坐标架和变换；动力学另需明确质量、
-质心、惯量与关节。当前为文件交换，修改数据/CAD 后重新导出，尚无后台实时共仿真。
-详见 [跨软件联动说明](docs/VISUALIZATION_INTEROP.zh-CN.md)。
-
-`examples/visualization-interop-demo.html` 是原创下肢模型、CAD 测试块和合成信号演示，
-可直接离线打开。它不是实际装置贴合、实验测量或生理有效性验证。
-
-## 版本与发行形式
-
-该安装包的核心 Python 模块为 CPython 3.12 编译字节码，主运行组合为 Python 3.12.13 +
-OpenSim 4.6 API；不支持替换为 Python 3.8 的旧 API。GUI 使用独立 Jython 桥接。
-必要的安装脚本、GUI 桥接、网页和 MATLAB 帮助函数可读。字节码可被逆向，不能视为加密。
-依赖版本见随包 lock 文件。包内不含用户模型、账号配置、参与者数据、MATLAB/SolidWorks
-软件或 OpenSim GUI。第三方组件独立安装，遵循各自许可；见 THIRD_PARTY_NOTICES.md。
-
-源码与发行包的执行验证数量见随 Release 提供的验证记录。发行包另行验证真实 MCP/IK、原生 Moco 自检、
-可视化接口和文件完整性；具体执行记录随 Release 提供。干净 Windows 虚拟机与 GUI
-生命周期测试不等同于本机安装验证。
-
-## 更新
-
-将新包解压到新的最终目录并完成自检后，再切换 Codex 配置。保留旧目录以便回退。
-`scripts/upgrade.ps1` 支持明确 SHA256 的并排校验、安装和可选激活；不自动下载陌生来源。
-不要把旧目录中的 `.venv`、`.api46-venv`、`runtimes` 或私有 `state` 上传到 GitHub。
+原生模块的源码迁移记录见 [SOURCE_IMPORT.json](docs/SOURCE_IMPORT.json)。
+项目代码的 [MIT 许可](LICENSE) 和各子项目第三方许可声明一并保留。
+人体有效性、具体装置贴合及硬件结果需结合实际模型和实验验证。

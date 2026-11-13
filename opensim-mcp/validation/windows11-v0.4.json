@@ -1,0 +1,485 @@
+{
+  "record_type": "Sanitized executed local validation, not hosted CI",
+  "date": "2026-10-28",
+  "project_version": "0.4.0",
+  "os": "Windows 11 x64 10.0.26200",
+  "python": "3.12.13",
+  "mcp_sdk": "1.29.1",
+  "matplotlib": "3.11.2",
+  "adapter_tests": {
+    "passed": 80,
+    "failed": 0
+  },
+  "tool_count": 47,
+  "api_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+  "actual_codex_configuration": {
+    "passed": true,
+    "actual_codex_registration": "opensim_mcp",
+    "adapter_version": "0.4.0",
+    "tool_count": 47,
+    "backend": "api",
+    "api_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+    "gui_bridge_version": "0.4.0",
+    "resources_folder_on_E": true,
+    "persistent_gui_profile": true
+  },
+  "native_stdio": {
+    "passed": true,
+    "discovery_diagnostics_undo_checkpoints": true,
+    "ik_marker_quality": {
+      "marker_rms_m": 0.0,
+      "marker_max_error_m": 0.0,
+      "per_marker": {
+        "M1": {
+          "rms_m": 0.0,
+          "max_error_m": 0.0
+        },
+        "M2": {
+          "rms_m": 0.0,
+          "max_error_m": 0.0
+        },
+        "M3": {
+          "rms_m": 0.0,
+          "max_error_m": 0.0
+        }
+      },
+      "checked_frames": 11,
+      "source_coordinate_rows": 11,
+      "max_time_match_error_s": 0.0,
+      "time_match_tolerance_s": 1e-06,
+      "interpolation": "none",
+      "interpolated_frames": 0,
+      "rms_threshold_m": 1e-06,
+      "threshold_passed": true
+    },
+    "scale": {
+      "original_mass_kg": 1.0,
+      "scaled_mass_kg": 2.0,
+      "mass_error_kg": 0.0,
+      "measurements": [
+        {
+          "body": "block",
+          "pair": [
+            "M1",
+            "M2"
+          ],
+          "reference_distance_m": 0.1,
+          "experimental_distance_m": 0.2,
+          "experimental_cv": 0.0,
+          "scaled_distance_m": 0.2,
+          "error_m": 0.0
+        }
+      ],
+      "max_pair_distance_error_m": 0.0,
+      "native_initialized_and_reopened": true
+    },
+    "joint_reaction": {
+      "slider": {
+        "peak_resultant_f_N": 20.0,
+        "peak_resultant_m_Nm": 0.0
+      }
+    },
+    "so_to_joint_reaction_pipeline": true,
+    "moco": {
+      "solver_success": true,
+      "solver_status": "Solve_Succeeded",
+      "iterations": 5,
+      "objective": 48.00000000000038,
+      "max_bound_violation": 0.0,
+      "max_endpoint_bound_violation": 0.0,
+      "checked_tolerance": 9.999999999999999e-06,
+      "mesh_refinement": {
+        "coarse_objective": 48.00000000001716,
+        "refined_objective": 48.00000000000038,
+        "relative_objective_change": 3.49646237888491e-13,
+        "refined_intervals": 20
+      },
+      "rows": 41
+    },
+    "async_completed": true,
+    "async_native_cancel_confirmed": true,
+    "history_survives_mcp_restart": true
+  },
+  "images": {
+    "curve_png_decoded": true,
+    "native_pose_png_decoded": true,
+    "gui_png_decoded": true,
+    "standalone_png_svg_written": true,
+    "synthetic_curve_pose_and_gui_png_visually_inspected": true
+  },
+  "gui": {
+    "version": "version 4.5.2-2026-02-17-1df1a24, build date 03:20:32 Feb 20 2026",
+    "bridge_version": "0.4.0",
+    "selection_read_back": true,
+    "pose_undo_verified": true,
+    "image_returned": true
+  },
+  "gui_lifecycle": {
+    "automatic_launches": 2,
+    "manual_bootstrap_run": false,
+    "restarted_into_new_process": true,
+    "stale_heartbeat_rejected": true
+  },
+  "startup_resources": {
+    "official_resources_installed_and_registered": true,
+    "persistent_profile": "project/state/gui-user",
+    "var_log_redirects_to_temporary_root": true,
+    "normal_gui_restarted_and_bridge04_confirmed": true,
+    "first_use_resource_prompt_absent_after_restart": true
+  },
+  "human_regression": {
+    "dataset": "Official OpenSim Gait2354_Simbody / subject01 example; public demonstration trial",
+    "input_hashes": {
+      "subject01_simbody.osim": "8f2628983a7eae72ef1169c923f8a19be975522a04940e006cf98b9dfa7973c0",
+      "subject01_walk1_ik.mot": "98538187452f8d03e5d49a352ac4f29cb53fee8aa725d73c27a1ae82296fdfa2",
+      "subject01_walk1.trc": "19d378195932328f7e21bc4f709a5b00c2ecafbace4c0034d576d0e8f3c7b6e2",
+      "subject01_walk1_grf.mot": "69a5e8633f8666bc192abd8069e6812fe7b4c8bb8968dc3254d4824abf263662"
+    },
+    "inputs_redistributed": false,
+    "physiological_validation": false,
+    "api46_model": {
+      "opensim_version": "version 4.6-2026-06-22-85aaf64, build date 18:27:55 Jun 22 2026",
+      "counts": {
+        "bodies": 12,
+        "joints": 12,
+        "coordinates": 23,
+        "markers": 39,
+        "muscles": 54
+      },
+      "total_mass_kg": 72.59999999999998
+    },
+    "force_plate_id": {
+      "rows": 73,
+      "time_range": [
+        0.4,
+        1.6
+      ],
+      "pelvis_residual_force_rms_N": 52.93971814858892,
+      "pelvis_residual_force_peak_N": 186.99146817494963,
+      "pelvis_residual_rms_fraction_body_weight": 0.0743574227363609,
+      "interpretation": "Residuals are measured and reported; no automatic physiological acceptance threshold."
+    },
+    "reference_ik_marker_fit": {
+      "marker_rms_m": 0.02199652277590968,
+      "marker_max_error_m": 0.08497943944525618,
+      "per_marker": {
+        "L.ASIS": {
+          "rms_m": 0.007509780261884973,
+          "max_error_m": 0.012612697347287202
+        },
+        "L.Acromium": {
+          "rms_m": 0.06229459433792895,
+          "max_error_m": 0.06683777430710679
+        },
+        "L.Heel": {
+          "rms_m": 0.006573955738417685,
+          "max_error_m": 0.014956145021189107
+        },
+        "L.Midfoot.Lat": {
+          "rms_m": 0.01229807996477059,
+          "max_error_m": 0.028380671332498494
+        },
+        "L.Midfoot.Sup": {
+          "rms_m": 0.01059110361838239,
+          "max_error_m": 0.03435118566735905
+        },
+        "L.Shank.Front": {
+          "rms_m": 0.015958405033665843,
+          "max_error_m": 0.031867312629387086
+        },
+        "L.Shank.Rear": {
+          "rms_m": 0.009608172337522529,
+          "max_error_m": 0.021701920888394757
+        },
+        "L.Shank.Upper": {
+          "rms_m": 0.011660935346228017,
+          "max_error_m": 0.030622761009485036
+        },
+        "L.Thigh.Front": {
+          "rms_m": 0.02867268549198704,
+          "max_error_m": 0.04746110089821611
+        },
+        "L.Thigh.Rear": {
+          "rms_m": 0.0177532653616527,
+          "max_error_m": 0.027456098135062435
+        },
+        "L.Thigh.Upper": {
+          "rms_m": 0.020110711944346812,
+          "max_error_m": 0.03252417448472387
+        },
+        "L.Toe.Lat": {
+          "rms_m": 0.011595030560897704,
+          "max_error_m": 0.02574502899699457
+        },
+        "L.Toe.Med": {
+          "rms_m": 0.004542070756764407,
+          "max_error_m": 0.009553441319999814
+        },
+        "L.Toe.Tip": {
+          "rms_m": 0.0064280227488532765,
+          "max_error_m": 0.018066089595748375
+        },
+        "R.ASIS": {
+          "rms_m": 0.006022013423241844,
+          "max_error_m": 0.009986748989975433
+        },
+        "R.Acromium": {
+          "rms_m": 0.07827935114041745,
+          "max_error_m": 0.08497943944525618
+        },
+        "R.Heel": {
+          "rms_m": 0.005301842892255242,
+          "max_error_m": 0.012028236712456506
+        },
+        "R.Midfoot.Lat": {
+          "rms_m": 0.006662152337867478,
+          "max_error_m": 0.01655968931319715
+        },
+        "R.Midfoot.Sup": {
+          "rms_m": 0.00561638305072113,
+          "max_error_m": 0.012527185289104395
+        },
+        "R.Shank.Front": {
+          "rms_m": 0.01091048924254906,
+          "max_error_m": 0.021289066023031464
+        },
+        "R.Shank.Rear": {
+          "rms_m": 0.007779349720320658,
+          "max_error_m": 0.01597764860180151
+        },
+        "R.Shank.Upper": {
+          "rms_m": 0.011284903143075752,
+          "max_error_m": 0.023383454634823858
+        },
+        "R.Thigh.Front": {
+          "rms_m": 0.01730749690207949,
+          "max_error_m": 0.025292035341891738
+        },
+        "R.Thigh.Rear": {
+          "rms_m": 0.015348936691997656,
+          "max_error_m": 0.026562563624592396
+        },
+        "R.Thigh.Upper": {
+          "rms_m": 0.016299970533092057,
+          "max_error_m": 0.026693700229520962
+        },
+        "R.Toe.Lat": {
+          "rms_m": 0.008261483903239454,
+          "max_error_m": 0.01751217447567599
+        },
+        "R.Toe.Med": {
+          "rms_m": 0.007984842160117165,
+          "max_error_m": 0.01849636541262403
+        },
+        "R.Toe.Tip": {
+          "rms_m": 0.005513958604254572,
+          "max_error_m": 0.016977692731903193
+        },
+        "Sternum": {
+          "rms_m": 0.02299063130336804,
+          "max_error_m": 0.0275632266360592
+        },
+        "Top.Head": {
+          "rms_m": 0.019771745872066013,
+          "max_error_m": 0.0268670636713517
+        },
+        "V.Sacral": {
+          "rms_m": 0.00877001509393038,
+          "max_error_m": 0.01623061044475636
+        }
+      },
+      "checked_frames": 73,
+      "source_coordinate_rows": 73,
+      "max_time_match_error_s": 0.0003333300000001316,
+      "time_match_tolerance_s": 1.6e-06,
+      "interpolation": "linear",
+      "interpolated_frames": 48,
+      "rms_threshold_m": null,
+      "threshold_passed": null
+    },
+    "fresh_ik": {
+      "rows": 11,
+      "quality": {
+        "marker_rms_m": 0.019001125863383348,
+        "marker_max_error_m": 0.06491326655870495,
+        "per_marker": {
+          "L.ASIS": {
+            "rms_m": 0.023259859996780166,
+            "max_error_m": 0.0246797260188803
+          },
+          "L.Acromium": {
+            "rms_m": 0.0537711060899791,
+            "max_error_m": 0.05402620259930438
+          },
+          "L.Heel": {
+            "rms_m": 0.003637556771795217,
+            "max_error_m": 0.004389578294811607
+          },
+          "L.Midfoot.Lat": {
+            "rms_m": 0.004769308062505608,
+            "max_error_m": 0.006057763739003775
+          },
+          "L.Midfoot.Sup": {
+            "rms_m": 0.005853631392688047,
+            "max_error_m": 0.0069265997164858865
+          },
+          "L.Shank.Front": {
+            "rms_m": 0.007616647746027173,
+            "max_error_m": 0.008753096286623867
+          },
+          "L.Shank.Rear": {
+            "rms_m": 0.004188893006495529,
+            "max_error_m": 0.004930544353029964
+          },
+          "L.Shank.Upper": {
+            "rms_m": 0.004673924419282289,
+            "max_error_m": 0.005325858694750229
+          },
+          "L.Thigh.Front": {
+            "rms_m": 0.018075331129154087,
+            "max_error_m": 0.022112311546311034
+          },
+          "L.Thigh.Rear": {
+            "rms_m": 0.014030663013013017,
+            "max_error_m": 0.01654423392556006
+          },
+          "L.Thigh.Upper": {
+            "rms_m": 0.018847897516013522,
+            "max_error_m": 0.02165154346753194
+          },
+          "L.Toe.Lat": {
+            "rms_m": 0.006118302457856968,
+            "max_error_m": 0.006373708919476805
+          },
+          "L.Toe.Med": {
+            "rms_m": 0.005588358486635743,
+            "max_error_m": 0.006306744470014925
+          },
+          "L.Toe.Tip": {
+            "rms_m": 0.0030046801717788247,
+            "max_error_m": 0.0046896436603973335
+          },
+          "R.ASIS": {
+            "rms_m": 0.008195843280302404,
+            "max_error_m": 0.011854885033835565
+          },
+          "R.Acromium": {
+            "rms_m": 0.06400203026089007,
+            "max_error_m": 0.06491326655870495
+          },
+          "R.Heel": {
+            "rms_m": 0.005234941672220818,
+            "max_error_m": 0.007630337307111432
+          },
+          "R.Midfoot.Lat": {
+            "rms_m": 0.0036806025931383638,
+            "max_error_m": 0.006277482080712772
+          },
+          "R.Midfoot.Sup": {
+            "rms_m": 0.003789003799034335,
+            "max_error_m": 0.005316320583154087
+          },
+          "R.Shank.Front": {
+            "rms_m": 0.011389848233663598,
+            "max_error_m": 0.016787890469089614
+          },
+          "R.Shank.Rear": {
+            "rms_m": 0.008198571339985243,
+            "max_error_m": 0.011383977970171998
+          },
+          "R.Shank.Upper": {
+            "rms_m": 0.012435837926899033,
+            "max_error_m": 0.01926910278100232
+          },
+          "R.Thigh.Front": {
+            "rms_m": 0.01253910443994671,
+            "max_error_m": 0.015152218794865778
+          },
+          "R.Thigh.Rear": {
+            "rms_m": 0.01227912061922398,
+            "max_error_m": 0.015613182931138003
+          },
+          "R.Thigh.Upper": {
+            "rms_m": 0.011902666392832849,
+            "max_error_m": 0.01617563940202629
+          },
+          "R.Toe.Lat": {
+            "rms_m": 0.005471729923218087,
+            "max_error_m": 0.007726992165104762
+          },
+          "R.Toe.Med": {
+            "rms_m": 0.004924637559814334,
+            "max_error_m": 0.0054448920831376224
+          },
+          "R.Toe.Tip": {
+            "rms_m": 0.0034947963738449937,
+            "max_error_m": 0.004459187260595208
+          },
+          "Sternum": {
+            "rms_m": 0.020619447132160296,
+            "max_error_m": 0.02173842149647665
+          },
+          "Top.Head": {
+            "rms_m": 0.019465435487960474,
+            "max_error_m": 0.01998519951092487
+          },
+          "V.Sacral": {
+            "rms_m": 0.027300696609435546,
+            "max_error_m": 0.028886264671276807
+          }
+        },
+        "checked_frames": 11,
+        "source_coordinate_rows": 11,
+        "max_time_match_error_s": 0.0,
+        "time_match_tolerance_s": 1e-06,
+        "interpolation": "none",
+        "interpolated_frames": 0,
+        "rms_threshold_m": null,
+        "threshold_passed": null
+      }
+    },
+    "cross_version_46_to_43": {
+      "opensim_version": "version 4.3-2021-08-27-4bc7ad9, build date 02:30:27 Aug 28 2021",
+      "counts": {
+        "bodies": 12,
+        "joints": 12,
+        "coordinates": 23,
+        "markers": 39,
+        "muscles": 54
+      },
+      "total_mass_kg": 72.59999999999998
+    },
+    "id43_vs_id46": {
+      "max_absolute_force_or_moment_difference": 0,
+      "tolerance_N_or_Nm": 0.1,
+      "rows": 73
+    },
+    "cross_version_43_back_to_46": true,
+    "passed": true,
+    "original_inputs_unchanged": true
+  },
+  "legacy43": {
+    "native_stdio_passed": true,
+    "api_version": "version 4.3-2021-08-27-4bc7ad9, build date 02:30:27 Aug 28 2021",
+    "gui_tested": false,
+    "analyses": {
+      "run_inverse_dynamics_unassisted": 20,
+      "run_inverse_dynamics_assisted": 15,
+      "run_static_optimization_unassisted": 20,
+      "run_static_optimization_assisted": 15,
+      "muscle_path_length_m": 1,
+      "muscle_moment_arm_translation": 1
+    },
+    "source_unchanged": true
+  },
+  "not_validated": [
+    "physiological/clinical acceptance",
+    "arbitrary model types and external native plugins",
+    "final 4.6 GUI distribution",
+    "MarkerPlacer",
+    "structured MocoTrack/MocoInverse/custom goals",
+    "arbitrary GUI/topology undo",
+    "hosted CI",
+    "remote GitHub publication"
+  ]
+}

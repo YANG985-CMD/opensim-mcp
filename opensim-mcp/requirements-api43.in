@@ -1,0 +1,2 @@
+# Only for the OpenSim 4.3 GUI-distribution Python 3.8 bindings.
+numpy==1.20.3

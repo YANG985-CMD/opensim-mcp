@@ -1,0 +1,4 @@
+# Windows 11 x64, CPython 3.12 only. Official OpenSim wheel build 2.
+# Other Python ABIs require generating and validating a matching lock.
+opensim==4.6 --hash=sha256:28154869279aea3497b411d9d2e635cf215235655a0de2b1ced3f8a5eca40370
+numpy==2.5.4 --hash=sha256:a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a

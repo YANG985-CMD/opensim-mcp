@@ -1,0 +1,19 @@
+[mcp_servers.solidworks-mcp]
+command = 'E:/simulink/aanew/solidworks_local_mcp/.venv/Scripts/python.exe'
+args = ['-B', '-u', 'E:/simulink/aanew/solidworks_local_mcp/launch.py']
+cwd = 'E:/simulink/aanew/solidworks_local_mcp'
+startup_timeout_sec = 120
+tool_timeout_sec = 150
+enabled = true
+
+[mcp_servers.solidworks-mcp.env]
+PYTHONIOENCODING = 'utf-8'
+PYTHONUTF8 = '1'
+PYTHONDONTWRITEBYTECODE = '1'
+TEMP = 'E:/simulink/_codex_tmp/solidworks_local_runtime'
+TMP = 'E:/simulink/_codex_tmp/solidworks_local_runtime'
+SWLOCAL_TEMP = 'E:/simulink/_codex_tmp/solidworks_local_runtime'
+SWLOCAL_OUTPUT = 'E:/simulink/aanew/SolidWorks输出'
+SWLOCAL_YEAR = '2025'
+SWLOCAL_TYPELIB = 'D:/SW2025/SOLIDWORKS/sldworks.tlb'
+SWLOCAL_TIMEOUT = '120'

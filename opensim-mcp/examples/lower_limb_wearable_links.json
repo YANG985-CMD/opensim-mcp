@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "relative_example_mesh_paths": true,
+  "model": "lower_limb_demo.osim",
+  "links": [
+    {
+      "name": "thigh_cuff",
+      "parent_frame": "/bodyset/femur_r",
+      "mesh_path": "Geometry/wearable_cuff_mm.obj",
+      "mesh_units": "mm",
+      "translation_m": [
+        0.0,
+        -0.16,
+        0.0
+      ],
+      "orientation_xyz_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "color": [
+        0.1,
+        0.65,
+        0.9
+      ],
+      "mass_kg": 0.35,
+      "mass_center_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": [
+        0.0005,
+        0.0008,
+        0.0005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_type": "WeldJoint"
+    },
+    {
+      "name": "shank_cuff",
+      "parent_frame": "/bodyset/tibia_r",
+      "mesh_path": "Geometry/wearable_cuff_mm.obj",
+      "mesh_units": "mm",
+      "translation_m": [
+        0.0,
+        -0.17,
+        0.0
+      ],
+      "orientation_xyz_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "color": [
+        0.1,
+        0.65,
+        0.9
+      ],
+      "mass_kg": 0.25,
+      "mass_center_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inertia_kg_m2": [
+        0.0005,
+        0.0008,
+        0.0005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_type": "WeldJoint"
+    }
+  ],
+  "scope": "Original schematic mechanical demonstration; invented example masses/inertias, not measured device or anatomical validation. Resolve mesh paths relative to this example directory before tool calls."
+}

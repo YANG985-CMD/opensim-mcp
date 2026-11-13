@@ -1,0 +1,25 @@
+# Example only. Replace ALL example paths, or use scripts/print-codex-config.ps1.
+# Append this to %USERPROFILE%/.codex/config.toml; do not replace that file.
+[mcp_servers.opensim_mcp]
+command = 'E:/simulink/mcp_servers/opensim-mcp/.venv/Scripts/python.exe'
+args = ['-B', '-m', 'opensim_mcp.server']
+startup_timeout_sec = 20
+tool_timeout_sec = 180
+
+[mcp_servers.opensim_mcp.env]
+OPENSIM_MCP_CLI = 'E:/OpenSim 4.6/bin/opensim-cmd.exe'
+OPENSIM_MCP_ALLOWED_ROOTS = '["E:/simulink/mcp_servers/opensim-mcp/examples"]'
+OPENSIM_MCP_RESULTS_ROOT = 'E:/simulink/mcp_servers/opensim-mcp/results'
+OPENSIM_MCP_TEMP_ROOT = 'E:/simulink/_codex_tmp/opensim-mcp-runtime'
+OPENSIM_MCP_TIMEOUT_SEC = '120'
+PYTHONDONTWRITEBYTECODE = '1'
+TEMP = 'E:/simulink/_codex_tmp/opensim-mcp-runtime'
+TMP = 'E:/simulink/_codex_tmp/opensim-mcp-runtime'
+
+# Official PyPI API environment; keep the GUI SDK out of this process.
+OPENSIM_MCP_API_PYTHON = 'E:/simulink/mcp_servers/opensim-mcp/.api46-venv/Scripts/python.exe'
+OPENSIM_MCP_INSTALL_DIR = 'E:/OpenSim 4.6'
+OPENSIM_MCP_API_SDK = ''
+OPENSIM_MCP_TOOL_BACKEND = 'api'
+# Enable only for a trusted local Codex client; arbitrary code has user permissions.
+OPENSIM_MCP_ENABLE_SCRIPTS = '0'

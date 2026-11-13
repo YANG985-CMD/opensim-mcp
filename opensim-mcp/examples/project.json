@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Analytic slider: scale → IK → ID / JointReaction",
+  "inputs": {
+    "model": {"path": "slider.osim", "kind": "model"},
+    "markers": {"path": "slider.trc", "kind": "markers", "length_unit": "m"},
+    "muscle": {"path": "muscle_slider.osim", "kind": "model"},
+    "static": {"path": "muscle_slider_static.mot", "kind": "coordinates"}
+  },
+  "stages": [
+    {"id": "scale", "workflow": "scale", "parameters": {"model_path": "${inputs.model}", "subject_mass_kg": 2.0, "body_scales": {"block": [1.0, 1.0, 1.0]}}},
+    {"id": "ik", "workflow": "ik", "parameters": {"model_path": "${stages.scale.model}", "marker_path": "${inputs.markers}"}},
+    {"id": "fit", "workflow": "ik_quality", "parameters": {"model_path": "${stages.scale.model}", "coordinates_path": "${stages.ik.motion}", "marker_path": "${inputs.markers}"}},
+    {"id": "id", "workflow": "id", "parameters": {"model_path": "${stages.scale.model}", "coordinates_path": "${stages.ik.motion}", "no_external_loads": true}},
+    {"id": "jr", "workflow": "joint_reaction", "parameters": {"model_path": "${stages.scale.model}", "coordinates_path": "${stages.ik.motion}", "no_external_loads": true, "joint_names": ["slider"]}},
+    {"id": "so", "workflow": "static_optimization", "parameters": {"model_path": "${inputs.muscle}", "coordinates_path": "${inputs.static}", "no_external_loads": true}},
+    {"id": "muscles", "workflow": "muscle_analysis", "parameters": {"model_path": "${inputs.muscle}", "coordinates_path": "${inputs.static}"}}
+  ],
+  "checks": [{"id": "marker_fit", "stage": "fit", "metric": "marker_rms_m", "comparison": "max", "limit": 0.000001, "unit": "m", "severity": "error"}],
+  "plots": [{"stage": "ik", "output": "motion", "columns": ["slider_tx"], "ylabel": "Translation (m)"}, {"stage": "so", "output": "forces", "columns": ["puller"], "ylabel": "Muscle force (N)"}]
+}

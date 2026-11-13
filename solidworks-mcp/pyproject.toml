@@ -1,0 +1,16 @@
+[project]
+name = "solidworks-mcp"
+version = "0.5.3"
+description = "Local SOLIDWORKS 2025 MCP with one STA worker and geometry verification"
+requires-python = ">=3.12"
+dependencies = ["mcp==1.30.0", "pywin32==312", "comtypes==1.4.17"]
+
+[project.scripts]
+solidworks-mcp = "swlocal.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["swlocal*"]

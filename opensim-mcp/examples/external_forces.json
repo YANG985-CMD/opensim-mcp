@@ -1,0 +1,11 @@
+[
+  {
+    "name": "assistance",
+    "applied_to_body": "block",
+    "force_identifier": "assist_v",
+    "point_identifier": "assist_p",
+    "torque_identifier": "assist_t",
+    "force_expressed_in_body": "ground",
+    "point_expressed_in_body": "ground"
+  }
+]
